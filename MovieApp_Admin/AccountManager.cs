@@ -27,7 +27,7 @@ namespace MovieApp_Admin
         }
         public FirestoreDb LoadDB()
         {
-            string path = @"C:\Users\ASUS\Desktop\New folder\MovieApp_Admin\MovieApp_Admin\filmreview.json";
+            string path = @"C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\filmreview.json";
             //string path = AppDomain.CurrentDomain.BaseDirectory + @"filmreview.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
             FirestoreDb dab = FirestoreDb.Create("filmreview-de9c4");

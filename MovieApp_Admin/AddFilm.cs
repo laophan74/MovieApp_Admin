@@ -102,6 +102,7 @@ namespace MovieApp_Admin
                 richTextBox_Time.Text = "";
                 richTextBox_Totalpoint.Text = "";
                 richTextBox_Year.Text = "";
+                pictureBox1.Image = null;
             }
         }
 
