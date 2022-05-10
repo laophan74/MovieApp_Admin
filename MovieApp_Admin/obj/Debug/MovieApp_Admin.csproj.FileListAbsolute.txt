@@ -217,3 +217,4 @@ C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.csp
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.csproj.CopyComplete
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.exe
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.pdb
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.ListCategory.resources

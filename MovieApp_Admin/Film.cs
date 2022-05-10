@@ -73,14 +73,14 @@ namespace MovieApp_Admin
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            AddFilm.list.Clear();
             AddFilm add = new AddFilm();
             add.ShowDialog();
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa!!!", "Caution", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn xóa!!!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 DocumentReference docref = db.Collection("Films").Document(guna2DataGridView1.CurrentRow.Cells[4].Value.ToString());
                 docref.DeleteAsync();
@@ -92,5 +92,9 @@ namespace MovieApp_Admin
 
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

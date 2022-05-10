@@ -20,6 +20,7 @@ namespace MovieApp_Admin
         private FirestoreDb db = AccountManager.Instance().LoadDB();
         private string urlPos;
         private string urlTrailer;
+        public static List<string> list = new List<string>();
         public AddFilm()
         {
             InitializeComponent();
@@ -46,9 +47,7 @@ namespace MovieApp_Admin
                 string.IsNullOrEmpty(richTextBox_Descript.Text) ||
                 string.IsNullOrEmpty(richTextBox_Eps.Text) ||
                 string.IsNullOrEmpty(richTextBox_Genre.Text) ||
-                string.IsNullOrEmpty(richTextBox_Numrate.Text) ||
                 string.IsNullOrEmpty(richTextBox_Time.Text) ||
-                string.IsNullOrEmpty(richTextBox_Totalpoint.Text) ||
                 string.IsNullOrEmpty(richTextBox_Year.Text)
                 )
             {
@@ -67,7 +66,7 @@ namespace MovieApp_Admin
                     }).Child("FilmPoster").Child(r.Next(100000000,999999999).ToString()).PutAsync(streamUp);
                 string poster = await task;
                 ArrayList array = new ArrayList();
-
+                
                 var InfoFilm = new InfoFilm
                 {
                     name = textBox_Name.Text,
@@ -76,16 +75,17 @@ namespace MovieApp_Admin
 
                     poster = poster,
 
-                    category = { },//array,
+                    category = list,//array,
 
                     year = Convert.ToInt32(richTextBox_Year.Text),
 
                     trailer = "",
 
                     genre = richTextBox_Genre.Text,
-                    totalPoint = Convert.ToInt32(richTextBox_Totalpoint.Text),
+                    totalPoint = 0,
+                    rating = 0,
 
-                    numRate = Convert.ToInt32(richTextBox_Numrate.Text),
+                    numRate = 0,
                     time = Convert.ToInt32(richTextBox_Time.Text),
 
                     eps = Convert.ToInt32(richTextBox_Eps.Text)
@@ -98,9 +98,7 @@ namespace MovieApp_Admin
                 richTextBox_Descript.Text = "";
                 richTextBox_Eps.Text = "";
                 richTextBox_Genre.Text = "";
-                richTextBox_Numrate.Text = "";
                 richTextBox_Time.Text = "";
-                richTextBox_Totalpoint.Text = "";
                 richTextBox_Year.Text = "";
                 pictureBox1.Image = null;
             }
@@ -144,6 +142,12 @@ namespace MovieApp_Admin
             {
                 e.Handled = true;
             }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            ListCategory category = new ListCategory();
+            category.ShowDialog();
         }
     }
 }

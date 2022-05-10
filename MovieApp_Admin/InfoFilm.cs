@@ -21,7 +21,7 @@ namespace MovieApp_Admin
         [FirestoreProperty]
         public int numRate { get; set; }
         [FirestoreProperty]
-        public string[] category { get; set; }
+        public List<string> category { get; set; }
         [FirestoreProperty]
         public int year { get; set; }
         [FirestoreProperty]
@@ -32,5 +32,7 @@ namespace MovieApp_Admin
         public int time { get; set; }
         [FirestoreProperty]
         public int eps { get; set; }
+        [FirestoreProperty]
+        public int rating { get; set; }
     }
 }

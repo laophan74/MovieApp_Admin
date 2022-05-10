@@ -30,9 +30,11 @@
         {
             this.guna2Panel_top = new Guna.UI2.WinForms.Guna2Panel();
             this.label_val = new System.Windows.Forms.Label();
-            this.guna2PictureBox_val = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.richTextBox_Time = new System.Windows.Forms.RichTextBox();
@@ -40,12 +42,6 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.richTextBox_Year = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.richTextBox_Totalpoint = new System.Windows.Forms.RichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.richTextBox_Numrate = new System.Windows.Forms.RichTextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.richTextBox_Genre = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,7 +56,6 @@
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.richTextBox_Category = new System.Windows.Forms.RichTextBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,17 +65,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.guna2PictureBox_val = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel_top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel24.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -92,7 +84,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel_top
@@ -119,27 +111,12 @@
             this.label_val.Size = new System.Drawing.Size(0, 25);
             this.label_val.TabIndex = 5;
             // 
-            // guna2PictureBox_val
-            // 
-            this.guna2PictureBox_val.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox_val.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox_val.ImageRotate = 0F;
-            this.guna2PictureBox_val.Location = new System.Drawing.Point(19, 4);
-            this.guna2PictureBox_val.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2PictureBox_val.Name = "guna2PictureBox_val";
-            this.guna2PictureBox_val.Size = new System.Drawing.Size(126, 54);
-            this.guna2PictureBox_val.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox_val.TabIndex = 4;
-            this.guna2PictureBox_val.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.panel1.Controls.Add(this.panel24);
             this.panel1.Controls.Add(this.panel22);
             this.panel1.Controls.Add(this.panel20);
-            this.panel1.Controls.Add(this.panel18);
-            this.panel1.Controls.Add(this.panel16);
             this.panel1.Controls.Add(this.panel14);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel9);
@@ -158,10 +135,46 @@
             this.panel24.Controls.Add(this.panel7);
             this.panel24.Controls.Add(this.label6);
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel24.Location = new System.Drawing.Point(887, 468);
+            this.panel24.Location = new System.Drawing.Point(887, 368);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(354, 50);
             this.panel24.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label4.Location = new System.Drawing.Point(129, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(142, 50);
+            this.label4.TabIndex = 12;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.guna2Button1);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(272, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(82, 50);
+            this.panel7.TabIndex = 11;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.guna2Button1.BorderColor = System.Drawing.Color.Red;
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 5F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Red;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(6, 7);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(72, 39);
+            this.guna2Button1.TabIndex = 4;
+            this.guna2Button1.Text = "Choose";
             // 
             // label6
             // 
@@ -180,7 +193,7 @@
             this.panel22.Controls.Add(this.richTextBox_Time);
             this.panel22.Controls.Add(this.label16);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel22.Location = new System.Drawing.Point(887, 418);
+            this.panel22.Location = new System.Drawing.Point(887, 318);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(354, 50);
             this.panel22.TabIndex = 9;
@@ -216,7 +229,7 @@
             this.panel20.Controls.Add(this.richTextBox_Year);
             this.panel20.Controls.Add(this.label14);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(887, 368);
+            this.panel20.Location = new System.Drawing.Point(887, 268);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(354, 50);
             this.panel20.TabIndex = 8;
@@ -246,78 +259,6 @@
             this.label14.TabIndex = 10;
             this.label14.Text = "Year: ";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.richTextBox_Totalpoint);
-            this.panel18.Controls.Add(this.label12);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(887, 318);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(354, 50);
-            this.panel18.TabIndex = 7;
-            // 
-            // richTextBox_Totalpoint
-            // 
-            this.richTextBox_Totalpoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.richTextBox_Totalpoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_Totalpoint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox_Totalpoint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.richTextBox_Totalpoint.ForeColor = System.Drawing.Color.White;
-            this.richTextBox_Totalpoint.Location = new System.Drawing.Point(129, 0);
-            this.richTextBox_Totalpoint.Name = "richTextBox_Totalpoint";
-            this.richTextBox_Totalpoint.Size = new System.Drawing.Size(225, 50);
-            this.richTextBox_Totalpoint.TabIndex = 12;
-            this.richTextBox_Totalpoint.Text = "";
-            this.richTextBox_Totalpoint.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox_Totalpoint_KeyPress);
-            // 
-            // label12
-            // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 50);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "TotalPoint: ";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.richTextBox_Numrate);
-            this.panel16.Controls.Add(this.label10);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(887, 268);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(354, 50);
-            this.panel16.TabIndex = 6;
-            // 
-            // richTextBox_Numrate
-            // 
-            this.richTextBox_Numrate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.richTextBox_Numrate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_Numrate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox_Numrate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.richTextBox_Numrate.ForeColor = System.Drawing.Color.White;
-            this.richTextBox_Numrate.Location = new System.Drawing.Point(129, 0);
-            this.richTextBox_Numrate.Name = "richTextBox_Numrate";
-            this.richTextBox_Numrate.Size = new System.Drawing.Size(225, 50);
-            this.richTextBox_Numrate.TabIndex = 12;
-            this.richTextBox_Numrate.Text = "";
-            this.richTextBox_Numrate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox_Numrate_KeyPress);
-            // 
-            // label10
-            // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(129, 50);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Numrate: ";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel14
             // 
@@ -464,8 +405,8 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.guna2Button2);
             this.panel6.Controls.Add(this.richTextBox_Category);
-            this.panel6.Controls.Add(this.guna2ComboBox1);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(380, 100);
@@ -484,29 +425,6 @@
             this.richTextBox_Category.Size = new System.Drawing.Size(374, 51);
             this.richTextBox_Category.TabIndex = 8;
             this.richTextBox_Category.Text = "";
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Hành động",
-            "Võ thuật"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(530, 11);
-            this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(176, 36);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.TabIndex = 9;
-            this.guna2ComboBox1.TextOffset = new System.Drawing.Point(2, 0);
             // 
             // label2
             // 
@@ -609,41 +527,37 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // panel7
+            // guna2PictureBox_val
             // 
-            this.panel7.Controls.Add(this.guna2Button1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(272, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(82, 50);
-            this.panel7.TabIndex = 11;
+            this.guna2PictureBox_val.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox_val.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox_val.ImageRotate = 0F;
+            this.guna2PictureBox_val.Location = new System.Drawing.Point(19, 4);
+            this.guna2PictureBox_val.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox_val.Name = "guna2PictureBox_val";
+            this.guna2PictureBox_val.Size = new System.Drawing.Size(126, 54);
+            this.guna2PictureBox_val.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox_val.TabIndex = 4;
+            this.guna2PictureBox_val.TabStop = false;
             // 
-            // guna2Button1
+            // guna2Button2
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.guna2Button1.BorderColor = System.Drawing.Color.Red;
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 5F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(6, 7);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(72, 39);
-            this.guna2Button1.TabIndex = 4;
-            this.guna2Button1.Text = "Choose";
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Location = new System.Drawing.Point(129, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 50);
-            this.label4.TabIndex = 12;
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.guna2Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.guna2Button2.BorderColor = System.Drawing.Color.Red;
+            this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.BorderThickness = 1;
+            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Red;
+            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(511, 11);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(89, 53);
+            this.guna2Button2.TabIndex = 9;
+            this.guna2Button2.Text = "Choose";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // AddFilm
             // 
@@ -657,13 +571,11 @@
             this.Text = "AddFilm";
             this.guna2Panel_top.ResumeLayout(false);
             this.guna2Panel_top.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -676,7 +588,7 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,10 +605,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel10;
@@ -705,7 +613,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel20;
@@ -714,8 +621,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richTextBox_Time;
         private System.Windows.Forms.RichTextBox richTextBox_Year;
-        private System.Windows.Forms.RichTextBox richTextBox_Totalpoint;
-        private System.Windows.Forms.RichTextBox richTextBox_Numrate;
         private System.Windows.Forms.RichTextBox richTextBox_Genre;
         private System.Windows.Forms.RichTextBox richTextBox_Eps;
         private System.Windows.Forms.RichTextBox richTextBox_Descript;
@@ -728,5 +633,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel7;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

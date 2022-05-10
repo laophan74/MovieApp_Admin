@@ -329,6 +329,12 @@
     </Compile>
     <Compile Include="InfoFilm.cs" />
     <Compile Include="InfoUser.cs" />
+    <Compile Include="ListCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListCategory.Designer.cs">
+      <DependentUpon>ListCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListCategory.resx">
+      <DependentUpon>ListCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

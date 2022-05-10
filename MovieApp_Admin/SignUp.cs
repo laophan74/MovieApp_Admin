@@ -46,7 +46,9 @@ namespace MovieApp_Admin
                     if (await AccountManager.Instance().SignUp(guna2TextBox2.Text, guna2TextBox3.Text, guna2TextBox1.Text))
                     {
                         MessageBox.Show("Tạo tài khoản thành công!");
-                        Close();
+                        this.Hide();
+                        Form1 mn = new Form1();
+                        mn.ShowDialog();
                     }
                     else
                     {
