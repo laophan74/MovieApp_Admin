@@ -34,17 +34,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.panel22 = new System.Windows.Forms.Panel();
             this.richTextBox_Time = new System.Windows.Forms.RichTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.richTextBox_Year = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.richTextBox_Totalpoint = new System.Windows.Forms.RichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.richTextBox_Numrate = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_Director = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.richTextBox_Genre = new System.Windows.Forms.RichTextBox();
@@ -68,15 +67,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel25 = new System.Windows.Forms.Panel();
             this.guna2Panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel24.SuspendLayout();
+            this.panel25.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.panel18.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -89,7 +86,6 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel25.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel_top
@@ -135,7 +131,6 @@
             this.panel1.Controls.Add(this.panel24);
             this.panel1.Controls.Add(this.panel22);
             this.panel1.Controls.Add(this.panel20);
-            this.panel1.Controls.Add(this.panel18);
             this.panel1.Controls.Add(this.panel16);
             this.panel1.Controls.Add(this.panel14);
             this.panel1.Controls.Add(this.panel10);
@@ -154,7 +149,7 @@
             this.panel24.Controls.Add(this.label6);
             this.panel24.Controls.Add(this.panel25);
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel24.Location = new System.Drawing.Point(887, 468);
+            this.panel24.Location = new System.Drawing.Point(887, 418);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(354, 50);
             this.panel24.TabIndex = 10;
@@ -171,12 +166,40 @@
             this.label6.Text = "Trailer: ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.guna2Button11);
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel25.Location = new System.Drawing.Point(272, 0);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(82, 50);
+            this.panel25.TabIndex = 9;
+            // 
+            // guna2Button11
+            // 
+            this.guna2Button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.guna2Button11.BorderColor = System.Drawing.Color.Red;
+            this.guna2Button11.BorderRadius = 5;
+            this.guna2Button11.BorderThickness = 1;
+            this.guna2Button11.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.guna2Button11.ForeColor = System.Drawing.Color.Red;
+            this.guna2Button11.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2Button11.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button11.Location = new System.Drawing.Point(6, 7);
+            this.guna2Button11.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button11.Name = "guna2Button11";
+            this.guna2Button11.Size = new System.Drawing.Size(72, 31);
+            this.guna2Button11.TabIndex = 4;
+            this.guna2Button11.Text = "Choose";
+            this.guna2Button11.Click += new System.EventHandler(this.guna2Button11_Click);
+            // 
             // panel22
             // 
             this.panel22.Controls.Add(this.richTextBox_Time);
             this.panel22.Controls.Add(this.label16);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel22.Location = new System.Drawing.Point(887, 418);
+            this.panel22.Location = new System.Drawing.Point(887, 368);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(354, 50);
             this.panel22.TabIndex = 9;
@@ -210,7 +233,7 @@
             this.panel20.Controls.Add(this.richTextBox_Year);
             this.panel20.Controls.Add(this.label14);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(887, 368);
+            this.panel20.Location = new System.Drawing.Point(887, 318);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(354, 50);
             this.panel20.TabIndex = 8;
@@ -239,43 +262,9 @@
             this.label14.Text = "Year: ";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.richTextBox_Totalpoint);
-            this.panel18.Controls.Add(this.label12);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(887, 318);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(354, 50);
-            this.panel18.TabIndex = 7;
-            // 
-            // richTextBox_Totalpoint
-            // 
-            this.richTextBox_Totalpoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.richTextBox_Totalpoint.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox_Totalpoint.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox_Totalpoint.ForeColor = System.Drawing.Color.White;
-            this.richTextBox_Totalpoint.Location = new System.Drawing.Point(135, 7);
-            this.richTextBox_Totalpoint.Name = "richTextBox_Totalpoint";
-            this.richTextBox_Totalpoint.Size = new System.Drawing.Size(137, 37);
-            this.richTextBox_Totalpoint.TabIndex = 12;
-            this.richTextBox_Totalpoint.Text = "";
-            // 
-            // label12
-            // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 50);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "TotalPoint: ";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.richTextBox_Numrate);
+            this.panel16.Controls.Add(this.richTextBox_Director);
             this.panel16.Controls.Add(this.label10);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(887, 268);
@@ -283,17 +272,17 @@
             this.panel16.Size = new System.Drawing.Size(354, 50);
             this.panel16.TabIndex = 6;
             // 
-            // richTextBox_Numrate
+            // richTextBox_Director
             // 
-            this.richTextBox_Numrate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.richTextBox_Numrate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox_Numrate.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox_Numrate.ForeColor = System.Drawing.Color.White;
-            this.richTextBox_Numrate.Location = new System.Drawing.Point(135, 7);
-            this.richTextBox_Numrate.Name = "richTextBox_Numrate";
-            this.richTextBox_Numrate.Size = new System.Drawing.Size(137, 37);
-            this.richTextBox_Numrate.TabIndex = 12;
-            this.richTextBox_Numrate.Text = "";
+            this.richTextBox_Director.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.richTextBox_Director.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox_Director.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox_Director.ForeColor = System.Drawing.Color.White;
+            this.richTextBox_Director.Location = new System.Drawing.Point(135, 7);
+            this.richTextBox_Director.Name = "richTextBox_Director";
+            this.richTextBox_Director.Size = new System.Drawing.Size(137, 37);
+            this.richTextBox_Director.TabIndex = 12;
+            this.richTextBox_Director.Text = "";
             // 
             // label10
             // 
@@ -304,7 +293,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(129, 50);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Numrate: ";
+            this.label10.Text = "Director: ";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel14
@@ -569,33 +558,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // guna2Button11
-            // 
-            this.guna2Button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.guna2Button11.BorderColor = System.Drawing.Color.Red;
-            this.guna2Button11.BorderRadius = 5;
-            this.guna2Button11.BorderThickness = 1;
-            this.guna2Button11.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 6F);
-            this.guna2Button11.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button11.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Button11.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button11.Location = new System.Drawing.Point(6, 7);
-            this.guna2Button11.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button11.Name = "guna2Button11";
-            this.guna2Button11.Size = new System.Drawing.Size(72, 31);
-            this.guna2Button11.TabIndex = 4;
-            this.guna2Button11.Text = "Choose";
-            // 
-            // panel25
-            // 
-            this.panel25.Controls.Add(this.guna2Button11);
-            this.panel25.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel25.Location = new System.Drawing.Point(272, 0);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(82, 50);
-            this.panel25.TabIndex = 9;
-            // 
             // EditFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -612,9 +574,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
+            this.panel25.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
@@ -628,7 +590,6 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel25.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -647,8 +608,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel14;
@@ -668,8 +627,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richTextBox_Time;
         private System.Windows.Forms.RichTextBox richTextBox_Year;
-        private System.Windows.Forms.RichTextBox richTextBox_Totalpoint;
-        private System.Windows.Forms.RichTextBox richTextBox_Numrate;
+        private System.Windows.Forms.RichTextBox richTextBox_Director;
         private System.Windows.Forms.RichTextBox richTextBox_Genre;
         private System.Windows.Forms.RichTextBox richTextBox_Eps;
         private System.Windows.Forms.RichTextBox richTextBox_Descript;

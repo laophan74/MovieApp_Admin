@@ -30,11 +30,9 @@
         {
             this.guna2Panel_top = new Guna.UI2.WinForms.Guna2Panel();
             this.label_val = new System.Windows.Forms.Label();
+            this.guna2PictureBox_val = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.richTextBox_Time = new System.Windows.Forms.RichTextBox();
@@ -55,7 +53,7 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.richTextBox_Category = new System.Windows.Forms.RichTextBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,12 +63,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2PictureBox_val = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.richTextBox_director = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_trailer = new System.Windows.Forms.RichTextBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel24.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -84,7 +85,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel_top
@@ -111,9 +112,23 @@
             this.label_val.Size = new System.Drawing.Size(0, 25);
             this.label_val.TabIndex = 5;
             // 
+            // guna2PictureBox_val
+            // 
+            this.guna2PictureBox_val.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox_val.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox_val.ImageRotate = 0F;
+            this.guna2PictureBox_val.Location = new System.Drawing.Point(19, 4);
+            this.guna2PictureBox_val.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox_val.Name = "guna2PictureBox_val";
+            this.guna2PictureBox_val.Size = new System.Drawing.Size(126, 54);
+            this.guna2PictureBox_val.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox_val.TabIndex = 4;
+            this.guna2PictureBox_val.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel24);
             this.panel1.Controls.Add(this.panel22);
             this.panel1.Controls.Add(this.panel20);
@@ -131,50 +146,13 @@
             // 
             // panel24
             // 
-            this.panel24.Controls.Add(this.label4);
-            this.panel24.Controls.Add(this.panel7);
+            this.panel24.Controls.Add(this.richTextBox_director);
             this.panel24.Controls.Add(this.label6);
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel24.Location = new System.Drawing.Point(887, 368);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(354, 50);
             this.panel24.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Location = new System.Drawing.Point(129, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 50);
-            this.label4.TabIndex = 12;
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.guna2Button1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(272, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(82, 50);
-            this.panel7.TabIndex = 11;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.guna2Button1.BorderColor = System.Drawing.Color.Red;
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 5F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(6, 7);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(72, 39);
-            this.guna2Button1.TabIndex = 4;
-            this.guna2Button1.Text = "Choose";
             // 
             // label6
             // 
@@ -185,7 +163,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 50);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Trailer: ";
+            this.label6.Text = "Director: ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel22
@@ -406,7 +384,6 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.guna2Button2);
-            this.panel6.Controls.Add(this.richTextBox_Category);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(380, 100);
@@ -414,17 +391,24 @@
             this.panel6.Size = new System.Drawing.Size(861, 68);
             this.panel6.TabIndex = 2;
             // 
-            // richTextBox_Category
+            // guna2Button2
             // 
-            this.richTextBox_Category.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.richTextBox_Category.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_Category.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox_Category.ForeColor = System.Drawing.Color.White;
-            this.richTextBox_Category.Location = new System.Drawing.Point(129, 11);
-            this.richTextBox_Category.Name = "richTextBox_Category";
-            this.richTextBox_Category.Size = new System.Drawing.Size(374, 51);
-            this.richTextBox_Category.TabIndex = 8;
-            this.richTextBox_Category.Text = "";
+            this.guna2Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.guna2Button2.BorderColor = System.Drawing.Color.Red;
+            this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.BorderThickness = 1;
+            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Red;
+            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(136, 11);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(89, 53);
+            this.guna2Button2.TabIndex = 9;
+            this.guna2Button2.Text = "Choose";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // label2
             // 
@@ -527,37 +511,75 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // guna2PictureBox_val
+            // panel7
             // 
-            this.guna2PictureBox_val.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox_val.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox_val.ImageRotate = 0F;
-            this.guna2PictureBox_val.Location = new System.Drawing.Point(19, 4);
-            this.guna2PictureBox_val.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2PictureBox_val.Name = "guna2PictureBox_val";
-            this.guna2PictureBox_val.Size = new System.Drawing.Size(126, 54);
-            this.guna2PictureBox_val.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox_val.TabIndex = 4;
-            this.guna2PictureBox_val.TabStop = false;
+            this.panel7.Controls.Add(this.guna2Button1);
+            this.panel7.Controls.Add(this.richTextBox_trailer);
+            this.panel7.Controls.Add(this.label9);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(887, 418);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(354, 50);
+            this.panel7.TabIndex = 11;
             // 
-            // guna2Button2
+            // label9
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.guna2Button2.BorderColor = System.Drawing.Color.Red;
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(511, 11);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(89, 53);
-            this.guna2Button2.TabIndex = 9;
-            this.guna2Button2.Text = "Choose";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(129, 50);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Trailer: ";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // richTextBox_director
+            // 
+            this.richTextBox_director.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.richTextBox_director.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_director.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox_director.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.richTextBox_director.ForeColor = System.Drawing.Color.White;
+            this.richTextBox_director.Location = new System.Drawing.Point(129, 0);
+            this.richTextBox_director.Name = "richTextBox_director";
+            this.richTextBox_director.Size = new System.Drawing.Size(225, 50);
+            this.richTextBox_director.TabIndex = 13;
+            this.richTextBox_director.Text = "";
+            // 
+            // richTextBox_trailer
+            // 
+            this.richTextBox_trailer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.richTextBox_trailer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_trailer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.richTextBox_trailer.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.richTextBox_trailer.ForeColor = System.Drawing.Color.White;
+            this.richTextBox_trailer.Location = new System.Drawing.Point(129, 0);
+            this.richTextBox_trailer.Name = "richTextBox_trailer";
+            this.richTextBox_trailer.ReadOnly = true;
+            this.richTextBox_trailer.Size = new System.Drawing.Size(149, 50);
+            this.richTextBox_trailer.TabIndex = 14;
+            this.richTextBox_trailer.Text = "";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.guna2Button1.BorderColor = System.Drawing.Color.Red;
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Red;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(278, 0);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(76, 50);
+            this.guna2Button1.TabIndex = 15;
+            this.guna2Button1.Text = "Choose";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // AddFilm
             // 
@@ -569,11 +591,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AddFilm";
             this.Text = "AddFilm";
+            this.Load += new System.EventHandler(this.AddFilm_Load);
             this.guna2Panel_top.ResumeLayout(false);
             this.guna2Panel_top.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
@@ -588,7 +611,7 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_val)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -624,15 +647,16 @@
         private System.Windows.Forms.RichTextBox richTextBox_Genre;
         private System.Windows.Forms.RichTextBox richTextBox_Eps;
         private System.Windows.Forms.RichTextBox richTextBox_Descript;
-        private System.Windows.Forms.RichTextBox richTextBox_Category;
         private System.Windows.Forms.TextBox textBox_Name;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Panel panel7;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.RichTextBox richTextBox_trailer;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RichTextBox richTextBox_director;
     }
 }

@@ -52,13 +52,13 @@ namespace MovieApp_Admin
                         myIMG.Close();
                     }
                 }
+                richTextBox_Category.Text = String.Join(",", flm.category.ToArray());
                 richTextBox_Descript.Text = flm.descript;
                 textBox_Name.Text = flm.name;
                 richTextBox_Eps.Text = flm.eps.ToString();
                 richTextBox_Genre.Text = flm.genre;
-                richTextBox_Numrate.Text = flm.numRate.ToString();
+                richTextBox_Director.Text = flm.director;
                 richTextBox_Time.Text = flm.time.ToString();
-                richTextBox_Totalpoint.Text = flm.totalPoint.ToString();
                 richTextBox_Year.Text = flm.year.ToString();
             }
         }
@@ -85,19 +85,21 @@ namespace MovieApp_Admin
 
                 poster = poster,
 
-                category = { },//array,
+                category = AddFilm.list,
 
                 year = Convert.ToInt32(richTextBox_Year.Text),
 
                 trailer = "",
 
                 genre = richTextBox_Genre.Text,
-                totalPoint = Convert.ToInt32(richTextBox_Totalpoint.Text),
+                totalPoint = 0,
 
-                numRate = Convert.ToInt32(richTextBox_Numrate.Text),
+                numRate = 0,
                 time = Convert.ToInt32(richTextBox_Time.Text),
 
-                eps = Convert.ToInt32(richTextBox_Eps.Text)
+                eps = Convert.ToInt32(richTextBox_Eps.Text),
+                director = richTextBox_Director.Text,
+
             };
 
             DocumentSnapshot snap = await docref.GetSnapshotAsync();
@@ -121,6 +123,11 @@ namespace MovieApp_Admin
                 stream.Flush();
                 stream.Close();
             }
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

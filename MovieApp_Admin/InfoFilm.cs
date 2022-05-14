@@ -34,5 +34,7 @@ namespace MovieApp_Admin
         public int eps { get; set; }
         [FirestoreProperty]
         public int rating { get; set; }
+        [FirestoreProperty]
+        public string director { get; set; }
     }
 }

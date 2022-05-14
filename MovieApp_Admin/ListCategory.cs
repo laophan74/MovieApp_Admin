@@ -12,6 +12,8 @@ namespace MovieApp_Admin
 {
     public partial class ListCategory : Form
     {
+        public static string cate;
+
         public ListCategory()
         {
             InitializeComponent();
@@ -19,7 +21,8 @@ namespace MovieApp_Admin
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            foreach(object category in listBox1.SelectedItems)
+            AddFilm addFilm = new AddFilm();
+            foreach (object category in listBox1.SelectedItems)
             {
                 int dem = 0;
                 for (int i = 0; i < AddFilm.list.Count; i++)
@@ -31,12 +34,15 @@ namespace MovieApp_Admin
                 if(dem == 0)
                 {
                    AddFilm.list.Add(category.ToString());
-
                 }
             }
             MessageBox.Show("Thành công!");
+            
+            /*for (int i = 0; i < AddFilm.list.Count; i++)
+            {
+               cate = AddFilm.list[i] + ", ";
+            }*/
             this.Hide();
-
         }
     }
 }
