@@ -174,7 +174,7 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BorderRadius = 25;
-            this.guna2PictureBox1.Image = global::MovieApp_Admin.Properties.Resources._1;
+            this.guna2PictureBox1.Image = global::MovieApp_Admin.Properties.Resources._default;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(157, 12);
             this.guna2PictureBox1.Name = "guna2PictureBox1";

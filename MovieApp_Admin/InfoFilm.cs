@@ -36,5 +36,23 @@ namespace MovieApp_Admin
         public int rating { get; set; }
         [FirestoreProperty]
         public string director { get; set; }
+
+        public InfoFilm(string name, string descript, string poster, int totalPoint, int numRate, List<string> category, int year, string trailer, string genre, int time, int eps, int rating, string director)
+        {
+            this.name = name;
+            this.descript = descript;
+            this.poster = poster;
+            this.totalPoint = totalPoint;
+            this.numRate = numRate;
+            this.category = category;
+            this.year = year;
+            this.trailer = trailer;
+            this.genre = genre;
+            this.time = time;
+            this.eps = eps;
+            this.rating = rating;
+            this.director = director;
+        }
+        public InfoFilm() { }
     }
 }

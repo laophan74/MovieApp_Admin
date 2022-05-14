@@ -18,12 +18,13 @@ namespace MovieApp_Admin
     public partial class AddFilm : Form
     {
         private FirestoreDb db = AccountManager.Instance().LoadDB();
-        private string urlPos;
-        private string urlTrailer;
-        public static List<string> list = new List<string>();
+        private string urlPos = "";
+        private string urlTrailer = "";
+        private int defaultH;
         public AddFilm()
         {
             InitializeComponent();
+            defaultH = lbCategory.Height;
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -50,52 +51,30 @@ namespace MovieApp_Admin
                 string.IsNullOrEmpty(richTextBox_Time.Text) ||
                 string.IsNullOrEmpty(richTextBox_director.Text) ||
                 //string.IsNullOrEmpty(richTextBox_trailer.Text) ||
-                string.IsNullOrEmpty(richTextBox_Year.Text)
-                )
+                string.IsNullOrEmpty(richTextBox_Year.Text))
             {
                 MessageBox.Show("Vui lòng nhập lại thông tin!");
             }
             else
             {
-                Random r = new Random();
-                //poster
-                var streamUp = File.Open(urlPos, FileMode.Open);
-                var task = new FirebaseStorage(
-                    "filmreview-de9c4.appspot.com",
-                    new FirebaseStorageOptions
-                    {
-                        AuthTokenAsyncFactory = () => Task.FromResult(myProp.Default.token_txt),
-                        ThrowOnCancel = true
-                    }).Child("FilmPoster").Child(r.Next(100000000,999999999).ToString()).PutAsync(streamUp);
-                string poster = await task;
-                streamUp.Flush();
-                streamUp.Close();
-                //trailer
-                var streamUp1 = File.Open(urlPos, FileMode.Open);
-                var task1 = new FirebaseStorage(
-                    "filmreview-de9c4.appspot.com",
-                    new FirebaseStorageOptions
-                    {
-                        AuthTokenAsyncFactory = () => Task.FromResult(myProp.Default.token_txt),
-                        ThrowOnCancel = true
-                    }).Child("FilmTrailers").Child(r.Next(100000000, 999999999).ToString()).PutAsync(streamUp1);
-                string trailer = await task1;
-                streamUp1.Flush();
-                streamUp1.Close();
-
+                List<string> list = new List<string>();
+                foreach(var item in lbCategory.SelectedItems)
+                {
+                    list.Add(item.ToString());
+                }
                 var InfoFilm = new InfoFilm
                 {
                     name = textBox_Name.Text,
 
                     descript = richTextBox_Descript.Text,
 
-                    poster = poster,
+                    poster = "",
 
-                    category = list,//array,
+                    category = list,
 
                     year = Convert.ToInt32(richTextBox_Year.Text),
 
-                    trailer = trailer,
+                    trailer = "",
 
                     genre = richTextBox_Genre.Text,
                     totalPoint = 0,
@@ -108,16 +87,44 @@ namespace MovieApp_Admin
                     director = richTextBox_director.Text,
                 };
                 DocumentReference docRef = await db.Collection("Films").AddAsync(InfoFilm);
-                MessageBox.Show("Thêm thành công!");
-
-                textBox_Name.Text = "";
-                //richTextBox_Category.Text = "";
-                richTextBox_Descript.Text = "";
-                richTextBox_Eps.Text = "";
-                richTextBox_Genre.Text = "";
-                richTextBox_Time.Text = "";
-                richTextBox_Year.Text = "";
-                pictureBox1.Image = null;
+                string addID = docRef.Id;
+                string upPos = addID + ".jpg";
+                string upTra = addID + ".mp4";
+                string poster = "", trailer ="";
+                //poster
+                if (urlPos!="") { 
+                    var streamPos = File.Open(urlPos, FileMode.Open);
+                    var task = new FirebaseStorage(
+                        "filmreview-de9c4.appspot.com",
+                        new FirebaseStorageOptions
+                        {
+                            AuthTokenAsyncFactory = () => Task.FromResult(myProp.Default.token_txt),
+                            ThrowOnCancel = true
+                        }).Child("FilmPoster").Child(upPos).PutAsync(streamPos);
+                    poster = await task;
+                    streamPos.Close(); 
+                }
+                //trailer
+                if (urlTrailer!="") { 
+                    var streamTra = File.Open(urlTrailer, FileMode.Open);
+                    var task1 = new FirebaseStorage(
+                        "filmreview-de9c4.appspot.com",
+                        new FirebaseStorageOptions
+                        {
+                            AuthTokenAsyncFactory = () => Task.FromResult(myProp.Default.token_txt),
+                            ThrowOnCancel = true
+                        }).Child("FilmTrailers").Child(upTra).PutAsync(streamTra);
+                    trailer = await task1;
+                    streamTra.Close(); 
+                }
+                Dictionary<string, object> update = new Dictionary<string, object>
+                {
+                    { "poster", poster },
+                    { "trailer", trailer }
+                };
+                await docRef.UpdateAsync(update);             
+                MessageBox.Show("Thêm Film thành công!");
+                this.Close();
             }
         }
 
@@ -161,13 +168,6 @@ namespace MovieApp_Admin
             }
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            ListCategory category = new ListCategory();
-            category.ShowDialog();
-
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -180,15 +180,20 @@ namespace MovieApp_Admin
             if (open.ShowDialog() == DialogResult.OK)
             {
                 urlTrailer = open.FileName;
-                /*var stream = File.OpenRead(open.FileName);
-                Bitmap map = new Bitmap(stream);
-                stream.Flush();
-                stream.Close();*/
             }
         }
 
-        private void AddFilm_Load(object sender, EventArgs e)
+        private void btnMore_Click(object sender, EventArgs e)
         {
+            lbCategory.Height = defaultH * 10;
+        }
+
+        private void lbCategory_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                lbCategory.Height = defaultH;
+            }
         }
     }
 }

@@ -82,7 +82,7 @@
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.BorderRadius = 15;
-            this.guna2PictureBox1.Image = global::MovieApp_Admin.Properties.Resources._1;
+            this.guna2PictureBox1.Image = global::MovieApp_Admin.Properties.Resources._default;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(36, 11);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -288,8 +288,8 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1540, 744);
             this.Controls.Add(this.Panel_Container);
             this.Controls.Add(this.guna2Panel_top);

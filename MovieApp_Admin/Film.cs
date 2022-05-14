@@ -10,18 +10,16 @@ using System.Windows.Forms;
 using Google.Cloud.Firestore;
 using Firebase.Storage;
 using System.IO;
-using myProp = MovieApp_Admin.Properties.Settings;
 using System.Collections;
 using System.Net;
+using myRes = MovieApp_Admin.Properties.Resources;
 
 namespace MovieApp_Admin
 {
     public partial class Film : Form
     {
-        public static string showid;
+        public string fID;
         private FirestoreDb db = AccountManager.Instance().LoadDB();
-        private string urlPos;
-        private InfoFilm flm;
         
         public Film()
         {
@@ -42,16 +40,26 @@ namespace MovieApp_Admin
             foreach (DocumentSnapshot docsnap in snap.Documents)
             {
                 InfoFilm film = docsnap.ConvertTo<InfoFilm>();
+                Image image = myRes._default;
                 if (docsnap.Exists)
                 {
+                    if (film.poster != "")
+                    {
+                        using (WebClient web = new WebClient())
+                        {
+                            Stream stream = web.OpenRead(film.poster);
+                            Bitmap bit = new Bitmap(stream);
+                            if (bit != null) image = bit;
+                            stream.Flush();
+                            stream.Close();
+                        }
+                    }
                     guna2DataGridView1.Rows.Add(
-                        Image.FromFile(@"D:\abc.jpeg") ,
+                        image ,
                         film.name, 
                         film.category,
                         film.descript,
-                        docsnap.Id
-                        );
-
+                        docsnap.Id);
                 }
             }
         }
@@ -62,18 +70,14 @@ namespace MovieApp_Admin
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
-        {
-            showid = guna2DataGridView1.CurrentRow.Cells[4].Value.ToString();
-            
-
-            EditFilm addFilm = new EditFilm();
-            addFilm.ShowDialog();
+        {               
+            EditFilm edit = new EditFilm(fID);
+            edit.Show();
 
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            AddFilm.list.Clear();
+        {           
             AddFilm add = new AddFilm();
             add.ShowDialog();
         }
@@ -92,9 +96,9 @@ namespace MovieApp_Admin
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            fID = guna2DataGridView1.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

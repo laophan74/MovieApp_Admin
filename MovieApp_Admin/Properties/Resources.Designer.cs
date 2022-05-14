@@ -63,19 +63,9 @@ namespace MovieApp_Admin.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
+        internal static System.Drawing.Bitmap _default {
             get {
-                object obj = ResourceManager.GetObject("1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fil {
-            get {
-                object obj = ResourceManager.GetObject("fil", resourceCulture);
+                object obj = ResourceManager.GetObject("_default", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

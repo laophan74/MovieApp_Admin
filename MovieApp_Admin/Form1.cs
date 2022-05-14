@@ -25,23 +25,23 @@ namespace MovieApp_Admin
             {
                 MessageBox.Show("Xin điền thông tin đăng nhập!");
             }
-            else if (await AccountManager.Instance().SignIn(guna2TextBox1.Text, guna2TextBox3.Text))
+            else
             {
-                MessageBox.Show("Đăng nhập thành công!");
-                Main mn = new Main();
-                mn.Show();
-                Hide();
-                mn.Closed += (s, args) => Close();
+                if (await AccountManager.Instance().SignIn(guna2TextBox1.Text, guna2TextBox3.Text))
+                {
+                    MessageBox.Show("Đăng nhập thành công!");
+                    Main mn = new Main();
+                    mn.Show();
+                    Hide();
+                    mn.Closed += (s, args) => this.Close();
+                }               
             }
-            else MessageBox.Show("Đăng nhập không thành công!");
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-            SignUp mn = new SignUp();
-            mn.Show();
-            Hide();
-            mn.Closed += (s, args) => Close();
+            SignUp su = new SignUp();
+            su.Show();
         }
 
         private void label6_Click(object sender, EventArgs e)
