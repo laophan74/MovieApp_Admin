@@ -153,8 +153,6 @@ C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\System.Numerics.Ve
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\System.Reactive.dll
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\Bunifu.Licensing.dll
-C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\Firebase.xml
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\Google.Api.CommonProtos.pdb
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\Google.Api.CommonProtos.xml
@@ -208,7 +206,6 @@ C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.Acc
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.AddFilm.resources
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.EditFilm.resources
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.Film.resources
-C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.Form1.resources
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.Main.resources
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.Properties.Resources.resources
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.SignUp.resources
@@ -217,7 +214,6 @@ C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.csp
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.csproj.CopyComplete
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.exe
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.pdb
-C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.ListCategory.resources
 E:\Visual Studio\MovieApp_Admin\MovieApp_Admin\bin\Debug\grpc_csharp_ext.x86.dll
 E:\Visual Studio\MovieApp_Admin\MovieApp_Admin\bin\Debug\grpc_csharp_ext.x64.dll
 E:\Visual Studio\MovieApp_Admin\MovieApp_Admin\bin\Debug\libgrpc_csharp_ext.x64.so
@@ -326,3 +322,10 @@ E:\Visual Studio\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.csproj.C
 E:\Visual Studio\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.exe
 E:\Visual Studio\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.pdb
 E:\Visual Studio\MovieApp_Admin\MovieApp_Admin\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.SignIn.resources
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\Interop.WMPLib.dll
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\Interop.WMPLib.dll
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.csproj.ResolveComReference.cache

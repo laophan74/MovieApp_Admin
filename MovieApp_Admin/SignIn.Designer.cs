@@ -1,6 +1,6 @@
 ﻿namespace MovieApp_Admin
 {
-    partial class Form1
+    partial class SignIn
     {
         /// <summary>
         /// Required designer variable.
@@ -221,7 +221,7 @@
             this.label6.Text = "Exit";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // Form1
+            // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -239,8 +239,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2PictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "SignIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

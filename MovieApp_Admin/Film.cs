@@ -77,9 +77,9 @@ namespace MovieApp_Admin
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
-        {           
-            AddFilm add = new AddFilm();
-            add.ShowDialog();
+        {
+            AddFilm no = new AddFilm();
+            no.ShowDialog();
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)

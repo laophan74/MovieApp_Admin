@@ -78,7 +78,7 @@ namespace MovieApp_Admin
                 {
                     InfoUser user = ss.ConvertTo<InfoUser>();
                     if (!user.isAdmin) return false;
-                    CLient.adminName = user.adminName;
+                    CLient.adminName = user.name;
 
                 }
                 isSignOut = false;
@@ -109,7 +109,7 @@ namespace MovieApp_Admin
                 return false;
             }
         }
-        public async Task<bool> SignUp(string email, string pass, string displayN)
+        public async Task<bool> SignUp(string displayN, string pass, string email)
         {
             db = LoadDB();
             try
@@ -129,7 +129,8 @@ namespace MovieApp_Admin
                 DocumentReference docRef = db.Collection("Users").Document(userid);
                 Dictionary<string, object> user = new Dictionary<string, object>
                 {
-                    { "adminName", displayN },
+                    { "name", displayN },
+                    { "email", email },
                     { "isAdmin", true }
                 };
                 await docRef.SetAsync(user);

@@ -40,7 +40,7 @@ namespace MovieApp_Admin
                 InfoUser user = docsnap.ConvertTo<InfoUser>();
                 if (docsnap.Exists)
                 {
-                    guna2DataGridView1.Rows.Add(user.adminName, user.isAdmin.ToString());
+                    guna2DataGridView1.Rows.Add(user.name, user.isAdmin.ToString());
                 }
             }
         }

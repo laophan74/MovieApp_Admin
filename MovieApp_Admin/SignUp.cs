@@ -19,7 +19,7 @@ namespace MovieApp_Admin
 
         private void label5_Click(object sender, EventArgs e)
         {
-            Form1 mn = new Form1();
+            SignIn mn = new SignIn();
             mn.Show();
             Hide();
             mn.Closed += (s, args) => Close();
@@ -27,27 +27,27 @@ namespace MovieApp_Admin
 
         private async void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(guna2TextBox1.Text) ||
-                string.IsNullOrEmpty(guna2TextBox2.Text) ||
-                string.IsNullOrEmpty(guna2TextBox3.Text) ||
+            if (string.IsNullOrEmpty(emailTextBox.Text) ||
+                string.IsNullOrEmpty(nameTextBox.Text) ||
+                string.IsNullOrEmpty(passTextBox.Text) ||
                 string.IsNullOrEmpty(guna2TextBox4.Text))
             {
                 MessageBox.Show("Xin điền thông tin!");
             }
             else
             {
-                if (guna2TextBox3.Text != guna2TextBox4.Text)
+                if (passTextBox.Text != guna2TextBox4.Text)
                 {
                     MessageBox.Show("Mật khẩu không trùng khớp");
                 }
                 else
                 {
 
-                    if (await AccountManager.Instance().SignUp(guna2TextBox2.Text, guna2TextBox3.Text, guna2TextBox1.Text))
+                    if (await AccountManager.Instance().SignUp(nameTextBox.Text, passTextBox.Text, emailTextBox.Text))
                     {
                         MessageBox.Show("Tạo tài khoản thành công!");
                         this.Hide();
-                        Form1 mn = new Form1();
+                        SignIn mn = new SignIn();
                         mn.ShowDialog();
                     }
                     else

@@ -6,8 +6,12 @@ namespace MovieApp_Admin
     internal class InfoUser
     {
         [FirestoreProperty]
-        public string adminName { get; set; }
-        [FirestoreProperty]
         public bool isAdmin { get; set; }
+        [FirestoreProperty]
+        public string email { get; set; }
+        [FirestoreProperty]
+        public string imageURL { get; set; }
+        [FirestoreProperty]
+        public string name { get; set; }
     }
 }
