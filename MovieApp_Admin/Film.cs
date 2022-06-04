@@ -18,9 +18,9 @@ namespace MovieApp_Admin
 {
     public partial class Film : Form
     {
-        public string fID;
         private FirestoreDb db = AccountManager.Instance().LoadDB();
-        
+        public static string document;
+
         public Film()
         {
             InitializeComponent();
@@ -43,6 +43,27 @@ namespace MovieApp_Admin
                 Image image = myRes._default;
                 if (docsnap.Exists)
                 {
+                    //category to string
+                    List<string> cate = new List<string>();
+                    string category = "";
+                    foreach (var item in film.category)
+                    {
+                        cate.Add(item.ToString());
+                    }
+                    if(cate.Count > 1)
+                    {
+                        for (int i = 0; i < (cate.Count - 1); i++)
+                        {
+                            category += cate[i] + ", ";
+                        }
+                        category += cate[cate.Count - 1];
+                    }
+                    else
+                    {
+                        category += cate[0];
+                    }
+
+
                     if (film.poster != "")
                     {
                         using (WebClient web = new WebClient())
@@ -57,7 +78,7 @@ namespace MovieApp_Admin
                     guna2DataGridView1.Rows.Add(
                         image ,
                         film.name, 
-                        film.category,
+                        category,
                         film.descript,
                         docsnap.Id);
                 }
@@ -70,8 +91,9 @@ namespace MovieApp_Admin
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
-        {               
-            EditFilm edit = new EditFilm(fID);
+        {
+            document = guna2DataGridView1.CurrentRow.Cells[4].Value.ToString();
+            EditFilm edit = new EditFilm();
             edit.Show();
 
         }
@@ -98,7 +120,6 @@ namespace MovieApp_Admin
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            fID = guna2DataGridView1.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

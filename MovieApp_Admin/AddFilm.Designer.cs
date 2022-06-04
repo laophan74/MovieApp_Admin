@@ -46,10 +46,17 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label_trailer = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.genre = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.country = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.time = new Guna.UI2.WinForms.Guna2TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -60,7 +67,7 @@
             this.eps = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.descript = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,13 +80,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label_trailer = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.genre = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.country = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label_category = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -94,6 +95,8 @@
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -103,8 +106,6 @@
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel12.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -312,6 +313,18 @@
             this.panel8.Size = new System.Drawing.Size(1223, 50);
             this.panel8.TabIndex = 12;
             // 
+            // label_trailer
+            // 
+            this.label_trailer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label_trailer.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_trailer.ForeColor = System.Drawing.Color.Black;
+            this.label_trailer.Location = new System.Drawing.Point(257, 0);
+            this.label_trailer.Name = "label_trailer";
+            this.label_trailer.Size = new System.Drawing.Size(675, 50);
+            this.label_trailer.TabIndex = 13;
+            this.label_trailer.Text = "C:/";
+            this.label_trailer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.guna2Button1);
@@ -369,6 +382,93 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.panel2.Size = new System.Drawing.Size(1223, 578);
             this.panel2.TabIndex = 8;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.genre);
+            this.panel14.Controls.Add(this.label8);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(935, 308);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(280, 50);
+            this.panel14.TabIndex = 11;
+            // 
+            // genre
+            // 
+            this.genre.BackColor = System.Drawing.Color.Transparent;
+            this.genre.BorderRadius = 15;
+            this.genre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.genre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.genre.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.genre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.genre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.genre.ItemHeight = 30;
+            this.genre.Items.AddRange(new object[] {
+            "TV Series",
+            "Movie"});
+            this.genre.Location = new System.Drawing.Point(96, 6);
+            this.genre.Name = "genre";
+            this.genre.Size = new System.Drawing.Size(176, 36);
+            this.genre.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 50);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Genre: ";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.country);
+            this.panel12.Controls.Add(this.label9);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(935, 250);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(280, 58);
+            this.panel12.TabIndex = 10;
+            // 
+            // country
+            // 
+            this.country.BackColor = System.Drawing.Color.Transparent;
+            this.country.BorderRadius = 15;
+            this.country.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.country.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.country.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.country.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.country.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.country.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.country.ItemHeight = 30;
+            this.country.Items.AddRange(new object[] {
+            "America",
+            "China",
+            "Europe",
+            "Korea",
+            "Japan",
+            "Vietnam",
+            "Thailand"});
+            this.country.Location = new System.Drawing.Point(96, 8);
+            this.country.Name = "country";
+            this.country.Size = new System.Drawing.Size(176, 36);
+            this.country.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 58);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Country: ";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel22
             // 
@@ -501,7 +601,8 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.button1);
+            this.panel9.Controls.Add(this.label_category);
+            this.panel9.Controls.Add(this.button2);
             this.panel9.Controls.Add(this.descript);
             this.panel9.Controls.Add(this.label1);
             this.panel9.Controls.Add(this.label2);
@@ -512,17 +613,18 @@
             this.panel9.Size = new System.Drawing.Size(501, 478);
             this.panel9.TabIndex = 3;
             // 
-            // button1
+            // button2
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.button1.Location = new System.Drawing.Point(423, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 31);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Multi";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.BackgroundImage = global::MovieApp_Admin.Properties.Resources.dots;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button2.Location = new System.Drawing.Point(281, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(31, 29);
+            this.button2.TabIndex = 23;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // descript
             // 
@@ -562,13 +664,14 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(6, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 36);
+            this.label2.Size = new System.Drawing.Size(129, 34);
             this.label2.TabIndex = 11;
             this.label2.Text = "Category: ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbCategory
             // 
+            this.lbCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.lbCategory.FormattingEnabled = true;
@@ -594,7 +697,7 @@
             this.lbCategory.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbCategory.Size = new System.Drawing.Size(285, 33);
+            this.lbCategory.Size = new System.Drawing.Size(143, 29);
             this.lbCategory.TabIndex = 2;
             this.lbCategory.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbCategory_KeyDown);
             // 
@@ -622,6 +725,7 @@
             this.name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.name.Location = new System.Drawing.Point(3, 44);
+            this.name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.name.Name = "name";
             this.name.PasswordChar = '\0';
             this.name.PlaceholderText = "";
@@ -698,104 +802,14 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label_trailer
+            // label_category
             // 
-            this.label_trailer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label_trailer.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_trailer.ForeColor = System.Drawing.Color.Black;
-            this.label_trailer.Location = new System.Drawing.Point(257, 0);
-            this.label_trailer.Name = "label_trailer";
-            this.label_trailer.Size = new System.Drawing.Size(675, 50);
-            this.label_trailer.TabIndex = 13;
-            this.label_trailer.Text = "C:/";
-            this.label_trailer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.country);
-            this.panel12.Controls.Add(this.label9);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(935, 250);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(280, 58);
-            this.panel12.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 58);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Country: ";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.genre);
-            this.panel14.Controls.Add(this.label8);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(935, 308);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(280, 50);
-            this.panel14.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 50);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Genre: ";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // genre
-            // 
-            this.genre.BackColor = System.Drawing.Color.Transparent;
-            this.genre.BorderRadius = 15;
-            this.genre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.genre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.genre.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.genre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.genre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.genre.ItemHeight = 30;
-            this.genre.Items.AddRange(new object[] {
-            "TV Series",
-            "Movie"});
-            this.genre.Location = new System.Drawing.Point(96, 6);
-            this.genre.Name = "genre";
-            this.genre.Size = new System.Drawing.Size(176, 36);
-            this.genre.TabIndex = 11;
-            // 
-            // country
-            // 
-            this.country.BackColor = System.Drawing.Color.Transparent;
-            this.country.BorderRadius = 15;
-            this.country.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.country.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.country.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.country.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.country.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.country.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.country.ItemHeight = 30;
-            this.country.Items.AddRange(new object[] {
-            "America",
-            "China",
-            "Europe",
-            "Korea",
-            "Japan",
-            "Vietnam",
-            "Thailand"});
-            this.country.Location = new System.Drawing.Point(96, 8);
-            this.country.Name = "country";
-            this.country.Size = new System.Drawing.Size(176, 36);
-            this.country.TabIndex = 12;
+            this.label_category.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label_category.Location = new System.Drawing.Point(321, 5);
+            this.label_category.Name = "label_category";
+            this.label_category.Size = new System.Drawing.Size(174, 94);
+            this.label_category.TabIndex = 24;
             // 
             // AddFilm
             // 
@@ -820,6 +834,8 @@
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
@@ -829,8 +845,6 @@
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel12.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -880,7 +894,6 @@
         private Guna.UI2.WinForms.Guna2TextBox name;
         private Guna.UI2.WinForms.Guna2TextBox descript;
         private Guna.UI2.WinForms.Guna2TextBox director;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label_trailer;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label9;
@@ -888,5 +901,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox genre;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2ComboBox country;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label_category;
     }
 }

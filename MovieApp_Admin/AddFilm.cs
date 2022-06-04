@@ -22,6 +22,7 @@ namespace MovieApp_Admin
         private string urlTrailer = "";
         private string urlDirector = "";
         private int defaultH;
+
         public AddFilm()
         {
             InitializeComponent();
@@ -40,94 +41,6 @@ namespace MovieApp_Admin
                 pictureBox1.Image = map;
                 stream.Flush();
                 stream.Close();
-            }
-        }
-
-        private async void guna2Button5_Click(object sender, EventArgs e)
-        {
-            if (
-                string.IsNullOrEmpty(descript.Text) ||
-                string.IsNullOrEmpty(eps.Text) ||
-                string.IsNullOrEmpty(genre.Text) ||
-                string.IsNullOrEmpty(time.Text) ||
-                string.IsNullOrEmpty(country.Text) ||
-                string.IsNullOrEmpty(year.Text))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-            }
-            else
-            {
-                List<string> list = new List<string>();
-                foreach (var item in lbCategory.SelectedItems)
-                {
-                    list.Add(item.ToString());
-                }
-                var InfoFilm = new InfoFilm
-                {
-                    name = name.Text,
-
-                    descript = descript.Text,
-
-                    poster = "",
-
-                    category = list,
-
-                    year = Convert.ToInt32(year.Text),
-
-                    trailer = "",
-
-                    genre = genre.SelectedItem.ToString(),
-                    totalPoint = 0,
-                    rating = 0,
-
-                    numRate = 0,
-                    time = Convert.ToInt32(time.Text),
-
-                    eps = Convert.ToInt32(eps.Text),
-                    director = director.Text,
-                    country = country.SelectedItem.ToString(),
-                };
-                DocumentReference docRef = await db.Collection("Films").AddAsync(InfoFilm);
-                string addID = docRef.Id;
-                string upPos = addID + ".jpg";
-                string upTra = addID + ".mp4";
-                string poster = "", trailer = "";
-                //poster
-                if (urlPos != "")
-                {
-                    var streamPos = File.Open(urlPos, FileMode.Open);
-                    var task = new FirebaseStorage(
-                        "filmreview-de9c4.appspot.com",
-                        new FirebaseStorageOptions
-                        {
-                            AuthTokenAsyncFactory = () => Task.FromResult(myProp.Default.token_txt),
-                            ThrowOnCancel = true
-                        }).Child("FilmPoster").Child(upPos).PutAsync(streamPos);
-                    poster = await task;
-                    streamPos.Close();
-                }
-                //trailer
-                if (urlTrailer != "")
-                {
-                    var streamTra = File.Open(urlTrailer, FileMode.Open);
-                    var task1 = new FirebaseStorage(
-                        "filmreview-de9c4.appspot.com",
-                        new FirebaseStorageOptions
-                        {
-                            AuthTokenAsyncFactory = () => Task.FromResult(myProp.Default.token_txt),
-                            ThrowOnCancel = true
-                        }).Child("FilmTrailers").Child(upTra).PutAsync(streamTra);
-                    trailer = await task1;
-                    streamTra.Close();
-                }
-                Dictionary<string, object> update = new Dictionary<string, object>
-                {
-                    { "poster", poster },
-                    { "trailer", trailer }
-                };
-                await docRef.UpdateAsync(update);
-                MessageBox.Show("Thêm Film thành công!");
-                this.Close();
             }
         }
 
@@ -154,6 +67,26 @@ namespace MovieApp_Admin
             if (e.KeyCode == Keys.Enter)
             {
                 lbCategory.Height = defaultH;
+                //category to string
+                List<string> cate = new List<string>();
+                string category = "";
+                foreach (var item in lbCategory.SelectedItems)
+                {
+                    cate.Add(item.ToString());
+                }
+                if (cate.Count > 1)
+                {
+                    for (int i = 0; i < (cate.Count - 1); i++)
+                    {
+                        category += cate[i] + ", ";
+                    }
+                    category += cate[cate.Count - 1];
+                }
+                else
+                {
+                    category += cate[0];
+                }
+                label_category.Text = category;
             }
         }
 
@@ -165,6 +98,9 @@ namespace MovieApp_Admin
                 string.IsNullOrEmpty(genre.Text) ||
                 string.IsNullOrEmpty(time.Text) ||
                 string.IsNullOrEmpty(director.Text) ||
+                lbCategory.SelectedItems.Count == 0 ||
+                pictureBox1.Image == null ||
+                pictureBox2.Image == null ||
                 string.IsNullOrEmpty(year.Text))
             {
                 MessageBox.Show("Vui lòng nhập lại thông tin!");
@@ -199,7 +135,8 @@ namespace MovieApp_Admin
 
                     eps = Convert.ToInt32(eps.Text),
                     director = director.Text,
-                    directorava = ""
+                    directorava = "",
+                    country = country.Text,
                 };
                 DocumentReference docRef = await db.Collection("Films").AddAsync(InfoFilm);
                 string addID = docRef.Id;
@@ -224,16 +161,16 @@ namespace MovieApp_Admin
                 //directorava
                 if (urlDirector != "")
                 {
-                    var streamPos = File.Open(urlDirector, FileMode.Open);
+                    var streamPos1 = File.Open(urlDirector, FileMode.Open);
                     var task = new FirebaseStorage(
                         "filmreview-de9c4.appspot.com",
                         new FirebaseStorageOptions
                         {
                             AuthTokenAsyncFactory = () => Task.FromResult(myProp.Default.token_txt),
                             ThrowOnCancel = true
-                        }).Child("Directors").Child(upDirector).PutAsync(streamPos);
+                        }).Child("Directors").Child(upDirector).PutAsync(streamPos1);
                     directorava = await task;
-                    streamPos.Close();
+                    streamPos1.Close();
                 }
                 //trailer
                 if (urlTrailer != "")
@@ -252,7 +189,8 @@ namespace MovieApp_Admin
                 Dictionary<string, object> update = new Dictionary<string, object>
                 {
                     { "poster", poster },
-                    { "trailer", trailer }
+                    { "trailer", trailer },
+                    { "directorava", directorava }
                 };
                 await docRef.UpdateAsync(update);
                 MessageBox.Show("Thêm Film thành công!");
@@ -280,13 +218,13 @@ namespace MovieApp_Admin
             if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+                
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             lbCategory.Height = defaultH * 5;
-
         }
     }
 }
