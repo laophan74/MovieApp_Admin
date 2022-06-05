@@ -33,15 +33,15 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbActor = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.director = new Guna.UI2.WinForms.Guna2TextBox();
+            this.nameDirector = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -84,11 +84,8 @@
             this.panel1.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel16.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel21.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel15.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -111,7 +108,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.AutoScrollMargin = new System.Drawing.Size(0, 20);
+            this.panel1.AutoScrollMargin = new System.Drawing.Size(0, 10);
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Controls.Add(this.panel23);
             this.panel1.Controls.Add(this.panel16);
@@ -145,7 +142,7 @@
             this.guna2Button3.ForeColor = System.Drawing.Color.Red;
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(642, 6);
+            this.guna2Button3.Location = new System.Drawing.Point(613, 4);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(112, 39);
@@ -155,42 +152,104 @@
             // 
             // panel16
             // 
+            this.panel16.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel16.Controls.Add(this.panel13);
             this.panel16.Controls.Add(this.panel21);
-            this.panel16.Controls.Add(this.panel17);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 1123);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(1223, 377);
             this.panel16.TabIndex = 15;
             // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.button1);
+            this.panel13.Controls.Add(this.lbActor);
+            this.panel13.Controls.Add(this.label11);
+            this.panel13.Location = new System.Drawing.Point(714, 3);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(496, 45);
+            this.panel13.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::MovieApp_Admin.Properties.Resources.dots;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(307, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 27);
+            this.button1.TabIndex = 24;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lbActor
+            // 
+            this.lbActor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbActor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbActor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.lbActor.FormattingEnabled = true;
+            this.lbActor.ItemHeight = 29;
+            this.lbActor.Items.AddRange(new object[] {
+            "Action",
+            "Adventure",
+            "Animation",
+            "Anime",
+            "Comedy",
+            "Crime",
+            "Documentary",
+            "Drama",
+            "Family",
+            "Fantasy",
+            "History",
+            "Music",
+            "Mystery",
+            "Romance",
+            "Sport",
+            "War"});
+            this.lbActor.Location = new System.Drawing.Point(135, 8);
+            this.lbActor.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.lbActor.Name = "lbActor";
+            this.lbActor.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lbActor.Size = new System.Drawing.Size(169, 29);
+            this.lbActor.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(129, 45);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Name: ";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.director);
+            this.panel21.Controls.Add(this.nameDirector);
             this.panel21.Controls.Add(this.label6);
-            this.panel21.Location = new System.Drawing.Point(445, 7);
+            this.panel21.Location = new System.Drawing.Point(3, 3);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(496, 45);
-            this.panel21.TabIndex = 10;
+            this.panel21.TabIndex = 12;
             // 
-            // director
+            // nameDirector
             // 
-            this.director.BorderRadius = 15;
-            this.director.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.director.DefaultText = "";
-            this.director.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.director.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.director.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.director.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.director.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.director.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.director.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.director.Location = new System.Drawing.Point(124, 6);
-            this.director.Name = "director";
-            this.director.PasswordChar = '\0';
-            this.director.PlaceholderText = "";
-            this.director.SelectedText = "";
-            this.director.Size = new System.Drawing.Size(262, 36);
-            this.director.TabIndex = 20;
+            this.nameDirector.BackColor = System.Drawing.Color.Transparent;
+            this.nameDirector.BorderRadius = 15;
+            this.nameDirector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.nameDirector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.nameDirector.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.nameDirector.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.nameDirector.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nameDirector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.nameDirector.ItemHeight = 30;
+            this.nameDirector.Location = new System.Drawing.Point(135, 4);
+            this.nameDirector.Name = "nameDirector";
+            this.nameDirector.Size = new System.Drawing.Size(358, 36);
+            this.nameDirector.TabIndex = 13;
             // 
             // label6
             // 
@@ -204,72 +263,27 @@
             this.label6.Text = "Name: ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.panel18);
-            this.panel17.Controls.Add(this.pictureBox2);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel17.Location = new System.Drawing.Point(0, 0);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(434, 377);
-            this.panel17.TabIndex = 1;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.panel19);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel18.Location = new System.Drawing.Point(0, 340);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(434, 37);
-            this.panel18.TabIndex = 1;
-            // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.guna2Button2);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel19.Location = new System.Drawing.Point(288, 0);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(146, 37);
-            this.panel19.TabIndex = 6;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderColor = System.Drawing.Color.Red;
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(12, 5);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(112, 28);
-            this.guna2Button2.TabIndex = 4;
-            this.guna2Button2.Text = "Choose";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(400, 319);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel15
             // 
+            this.panel15.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel15.Controls.Add(this.label10);
             this.panel15.Controls.Add(this.label7);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 1073);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1223, 50);
             this.panel15.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(714, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(129, 50);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Actors: ";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
@@ -320,7 +334,7 @@
             this.label_trailer.Dock = System.Windows.Forms.DockStyle.Left;
             this.label_trailer.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_trailer.ForeColor = System.Drawing.Color.Black;
-            this.label_trailer.Location = new System.Drawing.Point(257, 0);
+            this.label_trailer.Location = new System.Drawing.Point(205, 0);
             this.label_trailer.Name = "label_trailer";
             this.label_trailer.Size = new System.Drawing.Size(675, 50);
             this.label_trailer.TabIndex = 13;
@@ -331,7 +345,7 @@
             // 
             this.panel7.Controls.Add(this.guna2Button1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(129, 0);
+            this.panel7.Location = new System.Drawing.Point(77, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(128, 50);
             this.panel7.TabIndex = 12;
@@ -362,7 +376,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 50);
+            this.label4.Size = new System.Drawing.Size(77, 50);
             this.label4.TabIndex = 10;
             this.label4.Text = "Trailer: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -822,14 +836,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AddFilm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.AddFilm_Load);
             this.panel1.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.panel19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
@@ -876,13 +888,6 @@
         private System.Windows.Forms.Panel panel11;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel19;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel23;
@@ -895,7 +900,6 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox name;
         private Guna.UI2.WinForms.Guna2TextBox descript;
-        private Guna.UI2.WinForms.Guna2TextBox director;
         private System.Windows.Forms.Label label_trailer;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label9;
@@ -905,5 +909,13 @@
         private Guna.UI2.WinForms.Guna2ComboBox country;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label_category;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox lbActor;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel21;
+        private Guna.UI2.WinForms.Guna2ComboBox nameDirector;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
     }
 }

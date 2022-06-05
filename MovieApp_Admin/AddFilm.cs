@@ -20,7 +20,6 @@ namespace MovieApp_Admin
         private FirestoreDb db = AccountManager.Instance().LoadDB();
         private string urlPos = "";
         private string urlTrailer = "";
-        private string urlDirector = "";
         private int defaultH;
 
         public AddFilm()
@@ -56,8 +55,8 @@ namespace MovieApp_Admin
             if (open.ShowDialog() == DialogResult.OK)
             {
                 label_trailer.Text = open.FileName;
-                /*axWindowsMediaPlayer1.URL = open.FileName;
-                axWindowsMediaPlayer1.Ctlcontrols.play();*/
+                axWindowsMediaPlayer1.URL = open.FileName;
+                axWindowsMediaPlayer1.Ctlcontrols.play();
                 urlTrailer = open.FileName;
             }
         }
@@ -92,15 +91,14 @@ namespace MovieApp_Admin
 
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
+
             if (
                 string.IsNullOrEmpty(descript.Text) ||
                 string.IsNullOrEmpty(eps.Text) ||
                 string.IsNullOrEmpty(genre.Text) ||
                 string.IsNullOrEmpty(time.Text) ||
-                string.IsNullOrEmpty(director.Text) ||
                 lbCategory.SelectedItems.Count == 0 ||
                 pictureBox1.Image == null ||
-                pictureBox2.Image == null ||
                 string.IsNullOrEmpty(year.Text))
             {
                 MessageBox.Show("Vui lòng nhập lại thông tin!");
@@ -134,16 +132,14 @@ namespace MovieApp_Admin
                     time = Convert.ToInt32(time.Text),
 
                     eps = Convert.ToInt32(eps.Text),
-                    director = director.Text,
-                    directorava = "",
+                    director = nameDirector.Text,
                     country = country.Text,
                 };
                 DocumentReference docRef = await db.Collection("Films").AddAsync(InfoFilm);
                 string addID = docRef.Id;
                 string upPos = addID + ".jpg";
-                string upDirector = addID + ".jpg";
                 string upTra = addID + ".mp4";
-                string poster = "", trailer = "", directorava = "";
+                string poster = "", trailer = "";
                 //poster
                 if (urlPos != "")
                 {
@@ -158,23 +154,10 @@ namespace MovieApp_Admin
                     poster = await task;
                     streamPos.Close();
                 }
-                //directorava
-                if (urlDirector != "")
-                {
-                    var streamPos1 = File.Open(urlDirector, FileMode.Open);
-                    var task = new FirebaseStorage(
-                        "filmreview-de9c4.appspot.com",
-                        new FirebaseStorageOptions
-                        {
-                            AuthTokenAsyncFactory = () => Task.FromResult(myProp.Default.token_txt),
-                            ThrowOnCancel = true
-                        }).Child("Directors").Child(upDirector).PutAsync(streamPos1);
-                    directorava = await task;
-                    streamPos1.Close();
-                }
                 //trailer
                 if (urlTrailer != "")
                 {
+                    axWindowsMediaPlayer1.URL = null;
                     var streamTra = File.Open(urlTrailer, FileMode.Open);
                     var task1 = new FirebaseStorage(
                         "filmreview-de9c4.appspot.com",
@@ -190,26 +173,10 @@ namespace MovieApp_Admin
                 {
                     { "poster", poster },
                     { "trailer", trailer },
-                    { "directorava", directorava }
                 };
                 await docRef.UpdateAsync(update);
                 MessageBox.Show("Thêm Film thành công!");
                 this.Close();
-            }
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.png;*.jpg; *.jpeg; *.gif; *.bmp)|*.png;*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                urlDirector = open.FileName;
-                var stream = File.OpenRead(open.FileName);
-                Bitmap map = new Bitmap(stream);
-                pictureBox2.Image = map;
-                stream.Flush();
-                stream.Close();
             }
         }
 
@@ -225,6 +192,19 @@ namespace MovieApp_Admin
         private void button2_Click(object sender, EventArgs e)
         {
             lbCategory.Height = defaultH * 5;
+        }
+
+        private async void AddFilm_Load(object sender, EventArgs e)
+        {
+            QuerySnapshot sn = await db.Collection("Directors").GetSnapshotAsync();
+            foreach (DocumentSnapshot docsnap in sn)
+            {
+                InfoDirector director = docsnap.ConvertTo<InfoDirector>();
+                if (docsnap.Exists)
+                {
+                    nameDirector.Items.Add(director.name);
+                }
+            }
         }
     }
 }

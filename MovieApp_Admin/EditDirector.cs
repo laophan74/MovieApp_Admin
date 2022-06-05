@@ -38,19 +38,15 @@ namespace MovieApp_Admin
             }
             else
             {
-                var InfoDirector = new InfoDirector
-                {
-                    name = name.Text,
-                    age = Convert.ToInt32(age.Text),
-                };
-
-                DocumentReference docRef = await db.Collection("Directors").AddAsync(InfoDirector);
-                string addID = docRef.Id;
-                string upDirector = addID + ".jpg";
-                string directorava = "";
-                //directorava
                 if (urlDirector != "")
                 {
+                    DocumentReference docRef = db.Collection("Directors").Document(Director.document);
+                    string addID = docRef.Id;
+                    string upDirector = addID + ".jpg";
+                    string directorava = "";
+                    //directorava
+
+                    //
                     var streamPos1 = File.Open(urlDirector, FileMode.Open);
                     var task = new FirebaseStorage(
                         "filmreview-de9c4.appspot.com",
@@ -61,14 +57,33 @@ namespace MovieApp_Admin
                         }).Child("Directors").Child(upDirector).PutAsync(streamPos1);
                     directorava = await task;
                     streamPos1.Close();
+                    //
+                    var InfoDirector = new InfoDirector
+                    {
+                        name = name.Text,
+                        age = Convert.ToInt32(age.Text),
+                        avatar = directorava
+                    };
+                    /*Dictionary<string, object> update = new Dictionary<string, object>
+                    {
+                        { "avatar", directorava }
+                    };*/
+                    await docRef.SetAsync(InfoDirector);
+                    MessageBox.Show("Sửa thành công!");
+                    this.Close();
                 }
-                Dictionary<string, object> update = new Dictionary<string, object>
+                else
                 {
-                    { "avatar", directorava }
-                };
-                await docRef.UpdateAsync(update);
-                MessageBox.Show("Thêm thành công!");
-                this.Close();
+                    Dictionary<string, object> update = new Dictionary<string, object>
+                    {
+                        { "name", name.Text },
+                        { "age",Convert.ToInt32( age.Text) }
+                    };
+                    DocumentReference docRef = db.Collection("Directors").Document(Director.document);
+                    await docRef.UpdateAsync(update);
+                    MessageBox.Show("Sửa thành công!");
+                    this.Close();
+                }
             }
         }
 
