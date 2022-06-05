@@ -99,8 +99,8 @@ namespace MovieApp_Admin
                 string.IsNullOrEmpty(time.Text) ||
                 string.IsNullOrEmpty(director.Text) ||
                 lbCategory.SelectedItems.Count == 0 ||
-                pictureBox1.Image == null ||
-                pictureBox2.Image == null ||
+                pictureBox1 == null ||
+                label_trailer.Text == null ||
                 string.IsNullOrEmpty(year.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");

@@ -67,6 +67,7 @@
             this.eps = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label_category = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.descript = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,7 +81,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label_category = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -112,7 +112,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.AutoScrollMargin = new System.Drawing.Size(0, 20);
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Controls.Add(this.panel23);
             this.panel1.Controls.Add(this.panel16);
             this.panel1.Controls.Add(this.panel15);
@@ -285,6 +285,7 @@
             // 
             // panel11
             // 
+            this.panel11.BackColor = System.Drawing.Color.Gainsboro;
             this.panel11.Controls.Add(this.axWindowsMediaPlayer1);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 628);
@@ -304,6 +305,7 @@
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.Gainsboro;
             this.panel8.Controls.Add(this.label_trailer);
             this.panel8.Controls.Add(this.panel7);
             this.panel8.Controls.Add(this.label4);
@@ -367,7 +369,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.panel14);
             this.panel2.Controls.Add(this.panel12);
             this.panel2.Controls.Add(this.panel22);
@@ -613,6 +615,15 @@
             this.panel9.Size = new System.Drawing.Size(501, 478);
             this.panel9.TabIndex = 3;
             // 
+            // label_category
+            // 
+            this.label_category.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label_category.Location = new System.Drawing.Point(321, 5);
+            this.label_category.Name = "label_category";
+            this.label_category.Size = new System.Drawing.Size(174, 94);
+            this.label_category.TabIndex = 24;
+            // 
             // button2
             // 
             this.button2.BackgroundImage = global::MovieApp_Admin.Properties.Resources.dots;
@@ -802,22 +813,13 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label_category
-            // 
-            this.label_category.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label_category.Location = new System.Drawing.Point(321, 5);
-            this.label_category.Name = "label_category";
-            this.label_category.Size = new System.Drawing.Size(174, 94);
-            this.label_category.TabIndex = 24;
-            // 
             // AddFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1244, 628);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AddFilm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.panel1.ResumeLayout(false);

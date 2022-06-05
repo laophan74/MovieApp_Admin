@@ -309,17 +309,30 @@
       <DependentUpon>AccountManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountManager.cs" />
+    <Compile Include="EditDirector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDirector.Designer.cs">
+      <DependentUpon>EditDirector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDirector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDirector.Designer.cs">
+      <DependentUpon>AddDirector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoDirector.cs" />
     <Compile Include="EditFilm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditFilm.Designer.cs">
       <DependentUpon>EditFilm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditFil.cs">
+    <Compile Include="Director.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditFil.Designer.cs">
-      <DependentUpon>EditFil.cs</DependentUpon>
+    <Compile Include="Director.Designer.cs">
+      <DependentUpon>Director.cs</DependentUpon>
     </Compile>
     <Compile Include="Film.cs">
       <SubType>Form</SubType>
@@ -364,11 +377,17 @@
     <EmbeddedResource Include="AccountManagement.resx">
       <DependentUpon>AccountManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditDirector.resx">
+      <DependentUpon>EditDirector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDirector.resx">
+      <DependentUpon>AddDirector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditFilm.resx">
       <DependentUpon>EditFilm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditFil.resx">
-      <DependentUpon>EditFil.cs</DependentUpon>
+    <EmbeddedResource Include="Director.resx">
+      <DependentUpon>Director.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Film.resx">
       <DependentUpon>Film.cs</DependentUpon>

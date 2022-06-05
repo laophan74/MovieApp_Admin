@@ -77,5 +77,25 @@ namespace MovieApp_Admin
             UserProfile userProfile    = new UserProfile();
             userProfile.ShowDialog();
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            this.Panel_Container.Controls.Clear();
+            Director account = new Director();
+            account.TopLevel = false;
+            account.Dock = DockStyle.Fill;
+            this.Panel_Container.Controls.Add(account);
+            account.Show();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            this.Panel_Container.Controls.Clear();
+            AccountManagement account = new AccountManagement();
+            account.TopLevel = false;
+            account.Dock = DockStyle.Fill;
+            this.Panel_Container.Controls.Add(account);
+            account.Show();
+        }
     }
 }

@@ -40,9 +40,11 @@
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label_trailer = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -65,6 +67,8 @@
             this.eps = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label_category = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.descript = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,10 +80,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.label_category = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -88,8 +88,10 @@
             this.panel17.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel15.SuspendLayout();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,8 +105,6 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,6 +252,17 @@
             this.guna2Button2.Text = "Choose";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(400, 319);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.Gainsboro;
@@ -284,6 +295,16 @@
             this.panel11.Size = new System.Drawing.Size(1225, 445);
             this.panel11.TabIndex = 13;
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(725, 445);
+            this.axWindowsMediaPlayer1.TabIndex = 0;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Gainsboro;
@@ -301,7 +322,7 @@
             this.label_trailer.Dock = System.Windows.Forms.DockStyle.Left;
             this.label_trailer.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_trailer.ForeColor = System.Drawing.Color.Black;
-            this.label_trailer.Location = new System.Drawing.Point(257, 0);
+            this.label_trailer.Location = new System.Drawing.Point(205, 0);
             this.label_trailer.Name = "label_trailer";
             this.label_trailer.Size = new System.Drawing.Size(675, 50);
             this.label_trailer.TabIndex = 13;
@@ -312,7 +333,7 @@
             // 
             this.panel7.Controls.Add(this.guna2Button1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(129, 0);
+            this.panel7.Location = new System.Drawing.Point(77, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(128, 50);
             this.panel7.TabIndex = 12;
@@ -343,7 +364,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 50);
+            this.label4.Size = new System.Drawing.Size(77, 50);
             this.label4.TabIndex = 10;
             this.label4.Text = "Trailer: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -596,6 +617,28 @@
             this.panel9.Size = new System.Drawing.Size(501, 478);
             this.panel9.TabIndex = 3;
             // 
+            // label_category
+            // 
+            this.label_category.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label_category.Location = new System.Drawing.Point(321, 6);
+            this.label_category.Name = "label_category";
+            this.label_category.Size = new System.Drawing.Size(174, 94);
+            this.label_category.TabIndex = 23;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::MovieApp_Admin.Properties.Resources.dots;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(284, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 27);
+            this.button1.TabIndex = 22;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // descript
             // 
             this.descript.BorderRadius = 15;
@@ -700,7 +743,7 @@
             this.name.PasswordChar = '\0';
             this.name.PlaceholderText = "";
             this.name.SelectedText = "";
-            this.name.Size = new System.Drawing.Size(530, 50);
+            this.name.Size = new System.Drawing.Size(504, 50);
             this.name.TabIndex = 20;
             // 
             // label3
@@ -761,49 +804,6 @@
             this.guna2Button4.Text = "Choose";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(725, 445);
-            this.axWindowsMediaPlayer1.TabIndex = 0;
-            // 
-            // label_category
-            // 
-            this.label_category.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label_category.Location = new System.Drawing.Point(321, 6);
-            this.label_category.Name = "label_category";
-            this.label_category.Size = new System.Drawing.Size(174, 94);
-            this.label_category.TabIndex = 23;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(400, 319);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::MovieApp_Admin.Properties.Resources.dots;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(284, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 27);
-            this.button1.TabIndex = 22;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
@@ -822,7 +822,7 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1246, 628);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "EditFilm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.EditFilm_Load);
@@ -833,8 +833,10 @@
             this.panel17.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -848,8 +850,6 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
