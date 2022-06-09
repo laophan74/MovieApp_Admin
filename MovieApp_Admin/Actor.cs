@@ -16,19 +16,19 @@ using myRes = MovieApp_Admin.Properties.Resources;
 
 namespace MovieApp_Admin
 {
-    public partial class Director : Form
+    public partial class Actor : Form
     {
         private FirestoreDb db = AccountManager.Instance().LoadDB();
         public static string document;
 
-        public Director()
+        public Actor()
         {
             InitializeComponent();
         }
 
         private void Film_Load(object sender, EventArgs e)
         {
-            GetAllDocument("Directors");
+            GetAllDocument("Actors");
         }
 
         async void GetAllDocument(string nameofCollection)
@@ -38,7 +38,7 @@ namespace MovieApp_Admin
 
             foreach (DocumentSnapshot docsnap in snap.Documents)
             {
-                InfoDirector d = docsnap.ConvertTo<InfoDirector>();
+                InfoActor d = docsnap.ConvertTo<InfoActor>();
                 Image image = myRes._default;
                 if (docsnap.Exists)
                 {
@@ -65,14 +65,14 @@ namespace MovieApp_Admin
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             document = guna2DataGridView1.CurrentRow.Cells[3].Value.ToString();
-            EditDirector edit = new EditDirector();
+            EditActor edit = new EditActor();
             edit.Show();
 
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            AddDirector no = new AddDirector();
+            AddActor no = new AddActor();
             no.ShowDialog();
         }
 
@@ -80,13 +80,13 @@ namespace MovieApp_Admin
         {
             if (MessageBox.Show("Bạn có muốn xóa!!!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                DocumentReference docref = db.Collection("Directors").Document(guna2DataGridView1.CurrentRow.Cells[3].Value.ToString());
+                DocumentReference docref = db.Collection("Actors").Document(guna2DataGridView1.CurrentRow.Cells[3].Value.ToString());
                 docref.DeleteAsync();
                 MessageBox.Show("Đã xóa!");
             }
             guna2DataGridView1.Rows.Clear();
             guna2DataGridView1.Refresh();
-            GetAllDocument("Directors");
+            GetAllDocument("Actors");
 
         }
 
@@ -98,6 +98,11 @@ namespace MovieApp_Admin
         private void guna2DataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             label_count.Text = guna2DataGridView1.Rows.Count.ToString();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }

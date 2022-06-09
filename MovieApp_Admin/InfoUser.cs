@@ -10,7 +10,7 @@ namespace MovieApp_Admin
         [FirestoreProperty]
         public string email { get; set; }
         [FirestoreProperty]
-        public string avatar { get; set; }
+        public string imageURL { get; set; }
         [FirestoreProperty]
         public string name { get; set; }
         [FirestoreProperty]

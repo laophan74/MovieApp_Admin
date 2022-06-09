@@ -12,6 +12,9 @@ using Firebase.Storage;
 using System.IO;
 using myProp = MovieApp_Admin.Properties.Settings;
 using System.Collections;
+using System.Net;
+using myRes = MovieApp_Admin.Properties.Resources;
+
 
 namespace MovieApp_Admin
 {
@@ -20,8 +23,13 @@ namespace MovieApp_Admin
         private FirestoreDb db = AccountManager.Instance().LoadDB();
         private string urlPos = "";
         private string urlTrailer = "";
-        private int defaultH;
+        private string directorname = "";
+        private string actorname = "";
+        private List<string> actors = new List<string>();
+        private List<string> list = new List<string>();
 
+        private int defaultH;
+        private int a =0;
         public AddFilm()
         {
             InitializeComponent();
@@ -99,6 +107,7 @@ namespace MovieApp_Admin
                 string.IsNullOrEmpty(time.Text) ||
                 lbCategory.SelectedItems.Count == 0 ||
                 pictureBox1.Image == null ||
+                label_actor.Text == "" ||
                 string.IsNullOrEmpty(year.Text))
             {
                 MessageBox.Show("Vui lòng nhập lại thông tin!");
@@ -132,7 +141,8 @@ namespace MovieApp_Admin
                     time = Convert.ToInt32(time.Text),
 
                     eps = Convert.ToInt32(eps.Text),
-                    director = nameDirector.Text,
+                    director = directorname,
+                    actor = actors,
                     country = country.Text,
                 };
                 DocumentReference docRef = await db.Collection("Films").AddAsync(InfoFilm);
@@ -196,15 +206,110 @@ namespace MovieApp_Admin
 
         private async void AddFilm_Load(object sender, EventArgs e)
         {
-            QuerySnapshot sn = await db.Collection("Directors").GetSnapshotAsync();
-            foreach (DocumentSnapshot docsnap in sn)
+            getActor();
+            getDirector();
+        }
+
+        private async void getDirector()
+        {
+            Query Users = db.Collection("Directors");
+            QuerySnapshot snap = await Users.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap.Documents)
             {
-                InfoDirector director = docsnap.ConvertTo<InfoDirector>();
+                InfoDirector d = docsnap.ConvertTo<InfoDirector>();
+                Image image = myRes._default;
                 if (docsnap.Exists)
                 {
-                    nameDirector.Items.Add(director.name);
+                    if (d.avatar != "")
+                    {
+                        using (WebClient web = new WebClient())
+                        {
+                            Stream stream = web.OpenRead(d.avatar);
+                            Bitmap bit = new Bitmap(stream);
+                            if (bit != null) image = bit;
+                            stream.Flush();
+                            stream.Close();
+                        }
+                    }
+                    Directorgrid.Rows.Add(
+                        image,
+                        d.name,
+                        docsnap.Id);
                 }
             }
+        }
+
+        private async void getActor()
+        {
+            Query Users = db.Collection("Actors");
+            QuerySnapshot snap = await Users.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap.Documents)
+            {
+                InfoActor d = docsnap.ConvertTo<InfoActor>();
+                Image image = myRes._default;
+                if (docsnap.Exists)
+                {
+                    if (d.avatar != "")
+                    {
+                        using (WebClient web = new WebClient())
+                        {
+                            Stream stream = web.OpenRead(d.avatar);
+                            Bitmap bit = new Bitmap(stream);
+                            if (bit != null) image = bit;
+                            stream.Flush();
+                            stream.Close();
+                        }
+                    }
+                    Actorgrid.Rows.Add(
+                        image,
+                        d.name,
+                        docsnap.Id);
+                }
+            }
+        }
+        private async void guna2Button2_Click(object sender, EventArgs e)
+        {
+            label_director.Text = "";
+            DocumentReference docref = db.Collection("Directors").Document(Directorgrid.CurrentRow.Cells[2].Value.ToString());
+            DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
+            if (docsnap.Exists)
+            {
+                InfoDirector d = docsnap.ConvertTo<InfoDirector>();
+                directorname = d.name;
+            }
+            label_director.Text = directorname;
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            a = 0;
+            for (int i = 0; i < actors.Count; i++)
+            {
+                if (actors[i] == Actorgrid.CurrentRow.Cells[2].Value.ToString())
+                {
+                    a = a + 1;
+                }
+            }
+            if (a == 0)
+            {
+                actors.Add(Actorgrid.CurrentRow.Cells[2].Value.ToString());
+                actorname += Actorgrid.CurrentRow.Cells[1].Value.ToString() + ", ";
+                label_actor.Text = actorname;
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã thêm diễn viên này rồi!");
+            }
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            a = 0;
+            actorname = "";
+            actors.Clear();
+            label_actor.Text = "";
         }
     }
 }

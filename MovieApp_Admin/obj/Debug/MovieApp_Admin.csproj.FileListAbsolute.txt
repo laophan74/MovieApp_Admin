@@ -333,3 +333,6 @@ C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.Use
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.AddDirector.resources
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.Director.resources
 C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.EditDirector.resources
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.Actor.resources
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.AddActor.resources
+C:\Users\ASUS\Desktop\MovieApp_Admin\MovieApp_Admin\obj\Debug\MovieApp_Admin.EditActor.resources

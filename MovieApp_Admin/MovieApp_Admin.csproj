@@ -309,6 +309,24 @@
       <DependentUpon>AccountManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountManager.cs" />
+    <Compile Include="Actor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actor.Designer.cs">
+      <DependentUpon>Actor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddActor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddActor.Designer.cs">
+      <DependentUpon>AddActor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditActor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditActor.Designer.cs">
+      <DependentUpon>EditActor.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditDirector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +339,7 @@
     <Compile Include="AddDirector.Designer.cs">
       <DependentUpon>AddDirector.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoActor.cs" />
     <Compile Include="InfoDirector.cs" />
     <Compile Include="EditFilm.cs">
       <SubType>Form</SubType>
@@ -376,6 +395,15 @@
     </Compile>
     <EmbeddedResource Include="AccountManagement.resx">
       <DependentUpon>AccountManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actor.resx">
+      <DependentUpon>Actor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddActor.resx">
+      <DependentUpon>AddActor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditActor.resx">
+      <DependentUpon>EditActor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditDirector.resx">
       <DependentUpon>EditDirector.cs</DependentUpon>
@@ -470,6 +498,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\businessman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Grpc.Core.2.41.0\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.41.0\build\net45\Grpc.Core.targets')" />

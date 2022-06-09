@@ -111,10 +111,10 @@ namespace MovieApp_Admin
                 DocumentReference docref = db.Collection("Films").Document(guna2DataGridView1.CurrentRow.Cells[4].Value.ToString());
                 docref.DeleteAsync();
                 MessageBox.Show("Đã xóa!");
-            }
             guna2DataGridView1.Rows.Clear();
             guna2DataGridView1.Refresh();
             GetAllDocument("Films");
+            }
 
         }
 

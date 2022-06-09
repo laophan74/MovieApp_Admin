@@ -13,6 +13,8 @@ using System.IO;
 using myProp = MovieApp_Admin.Properties.Settings;
 using System.Collections;
 using System.Net;
+using myRes = MovieApp_Admin.Properties.Resources;
+
 
 namespace MovieApp_Admin
 {
@@ -22,7 +24,13 @@ namespace MovieApp_Admin
         private string urlPos = "";
         private string urlTrailer = "";
         private int defaultH;
+        private int a = 0;
         private InfoFilm flm;
+        private string directorname ="";
+        private string actorname = "";
+        private List<string> actors = new List<string>();
+        private List<string> list = new List<string>();
+
         DocumentReference docref;
 
         public EditFilm()
@@ -66,6 +74,7 @@ namespace MovieApp_Admin
             if (e.KeyCode == Keys.Enter)
             {
                 lbCategory.Height = defaultH;
+                list.Clear();
                 //category to string
                 List<string> cate = new List<string>();
                 string category = "";
@@ -97,9 +106,10 @@ namespace MovieApp_Admin
                 string.IsNullOrEmpty(eps.Text) ||
                 string.IsNullOrEmpty(genre.Text) ||
                 string.IsNullOrEmpty(time.Text) ||
-                lbCategory.SelectedItems.Count == 0 ||
+                directorname == "" ||
+                //lbCategory.SelectedItems.Count == 0 ||
                 pictureBox1 == null ||
-                label_trailer.Text == null ||
+                label_actor.Text == "" ||
                 string.IsNullOrEmpty(year.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
@@ -111,7 +121,6 @@ namespace MovieApp_Admin
                 string upPos = addID + ".jpg";
                 string upTra = addID + ".mp4";
                 string poster = "", trailer = "";
-                List<string> list = new List<string>();
                 foreach (var item in lbCategory.SelectedItems)
                 {
                     list.Add(item.ToString());
@@ -138,8 +147,9 @@ namespace MovieApp_Admin
                         { "numRate" , 0},
                         { "time" , Convert.ToInt32(time.Text)},
                         { "eps" , Convert.ToInt32(eps.Text)},
-                        { "director" , nameDirector.Text},
+                        { "director" , directorname},
                         { "country" , country.Text},
+                        { "actor" , actors},
                     };
                     await docRef.UpdateAsync(update);
                     MessageBox.Show("Sửa thành công!");
@@ -179,8 +189,9 @@ namespace MovieApp_Admin
                         { "numRate" , 0},
                         { "time" , Convert.ToInt32(time.Text)},
                         { "eps" , Convert.ToInt32(eps.Text)},
-                        { "director" , nameDirector.Text},
+                        { "director" , directorname},
                         { "country" , country.Text},
+                        { "actor" , actors},
                     };
                     await docRef.UpdateAsync(update);
                     MessageBox.Show("Sửa thành công!");
@@ -220,8 +231,9 @@ namespace MovieApp_Admin
                         { "numRate" , 0},
                         { "time" , Convert.ToInt32(time.Text)},
                         { "eps" , Convert.ToInt32(eps.Text)},
-                        { "director" , nameDirector.Text},
+                        { "director" , directorname},
                         { "country" , country.Text},
+                        { "actor" , actors},
                     };
                     await docRef.UpdateAsync(update);
                     MessageBox.Show("Sửa thành công!");
@@ -276,8 +288,9 @@ namespace MovieApp_Admin
                         { "numRate" , 0},
                         { "time" , Convert.ToInt32(time.Text)},
                         { "eps" , Convert.ToInt32(eps.Text)},
-                        { "director" , nameDirector.Text},
+                        { "director" , directorname},
                         { "country" , country.Text},
+                        { "actor" , actors},
                     };
                     await docRef.UpdateAsync(update);
                     MessageBox.Show("Sửa thành công!");
@@ -302,24 +315,12 @@ namespace MovieApp_Admin
         private void EditFilm_Load(object sender, EventArgs e)
         {
             GetAllData();
-            GetAllDirectorData();
-        }
-        private async void GetAllDirectorData()
-        {
-            QuerySnapshot sn = await db.Collection("Directors").GetSnapshotAsync();
-            foreach (DocumentSnapshot docsnap in sn)
-            {
-                InfoDirector director = docsnap.ConvertTo<InfoDirector>();
-                if (docsnap.Exists)
-                {
-                    nameDirector.Items.Add(director.name);
-                }
-            }
+            getDirector();
+            getActor();
         }
 
         private async void GetAllData()
         {
-
             docref = db.Collection("Films").Document(Film.document);
             DocumentSnapshot snap = await docref.GetSnapshotAsync();
             if (snap.Exists)
@@ -345,6 +346,40 @@ namespace MovieApp_Admin
                     category += cate[0];
                 }
                 label_category.Text = category;
+                list = flm.category;
+
+                //actor to string
+                if (flm.actor != null)
+                {
+                    List<string> cate1 = new List<string>();
+                    string category1 = "";
+                    foreach (var item in flm.actor)
+                    {
+                        DocumentReference docref1 = db.Collection("Actors").Document(item);
+                        DocumentSnapshot docsnap1 = await docref1.GetSnapshotAsync();
+                        if (docsnap1.Exists)
+                        {
+                            InfoActor d = docsnap1.ConvertTo<InfoActor>();
+                            cate1.Add(d.name);
+                        }
+
+                    }
+                    if (cate1.Count > 1)
+                    {
+                        for (int i = 0; i < (cate1.Count - 1); i++)
+                        {
+                            category1 += cate1[i] + ", ";
+                        }
+                        category1 += cate1[cate1.Count - 1];
+                    }
+                    else
+                    {
+                        category1 += cate1[0];
+                    }
+                    label_actor.Text = category1;
+                    actorname = category1 + ", ";
+                    actors = flm.actor;
+                }
 
                 if (flm.poster != "")
                 {
@@ -372,12 +407,113 @@ namespace MovieApp_Admin
                 year.Text = flm.year.ToString();
                 country.Text = flm.country.ToString();
                 axWindowsMediaPlayer1.URL = flm.trailer;
+
+                label_director.Text = flm.director;
+                directorname = flm.director;
             }
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private async void getDirector()
         {
+            Query Users = db.Collection("Directors");
+            QuerySnapshot snap = await Users.GetSnapshotAsync();
 
+            foreach (DocumentSnapshot docsnap in snap.Documents)
+            {
+                InfoDirector d = docsnap.ConvertTo<InfoDirector>();
+                Image image = myRes._default;
+                if (docsnap.Exists)
+                {
+                    if (d.avatar != "")
+                    {
+                        using (WebClient web = new WebClient())
+                        {
+                            Stream stream = web.OpenRead(d.avatar);
+                            Bitmap bit = new Bitmap(stream);
+                            if (bit != null) image = bit;
+                            stream.Flush();
+                            stream.Close();
+                        }
+                    }
+                    Directorgrid.Rows.Add(
+                        image,
+                        d.name,
+                        docsnap.Id);
+                }
+            }
+        }
+
+        private async void getActor()
+        {
+            Query Users = db.Collection("Actors");
+            QuerySnapshot snap = await Users.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap.Documents)
+            {
+                InfoActor d = docsnap.ConvertTo<InfoActor>();
+                Image image = myRes._default;
+                if (docsnap.Exists)
+                {
+                    if (d.avatar != "")
+                    {
+                        using (WebClient web = new WebClient())
+                        {
+                            Stream stream = web.OpenRead(d.avatar);
+                            Bitmap bit = new Bitmap(stream);
+                            if (bit != null) image = bit;
+                            stream.Flush();
+                            stream.Close();
+                        }
+                    }
+                    Actorgrid.Rows.Add(
+                        image,
+                        d.name,
+                        docsnap.Id);
+                }
+            }
+        }
+        private async void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+            label_director.Text = "";
+            DocumentReference docref = db.Collection("Directors").Document(Directorgrid.CurrentRow.Cells[2].Value.ToString());
+            DocumentSnapshot docsnap = await docref.GetSnapshotAsync();
+            if (docsnap.Exists)
+            {
+                InfoDirector d = docsnap.ConvertTo<InfoDirector>();
+                directorname = d.name;
+            }
+            label_director.Text = directorname;
+        }
+
+        private async void guna2Button5_Click(object sender, EventArgs e)
+        {
+            a = 0;
+            for(int i = 0; i < actors.Count; i++)
+            {
+                if(actors[i] == Actorgrid.CurrentRow.Cells[2].Value.ToString())
+                {
+                    a = a + 1;
+                }
+            }
+            if(a == 0)
+            {
+                actors.Add(Actorgrid.CurrentRow.Cells[2].Value.ToString());
+                actorname += Actorgrid.CurrentRow.Cells[1].Value.ToString() + ", ";
+                label_actor.Text = actorname;
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã thêm diễn viên này rồi!");
+            }
+            
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            a = 0;
+            actorname = "";
+            actors.Clear();
+            label_actor.Text = "";
         }
     }
 }

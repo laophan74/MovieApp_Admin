@@ -16,13 +16,13 @@ using System.Net;
 
 namespace MovieApp_Admin
 {
-    public partial class EditDirector : Form
+    public partial class EditActor : Form
     {
         private FirestoreDb db = AccountManager.Instance().LoadDB();
-        private string urlDirector = "";
-        private InfoDirector flm;
+        private string urlActor = "";
+        private InfoActor flm;
         DocumentReference docref;
-        public EditDirector()
+        public EditActor()
         {
             InitializeComponent();
         }
@@ -38,31 +38,31 @@ namespace MovieApp_Admin
             }
             else
             {
-                if (urlDirector != "")
+                if (urlActor != "")
                 {
-                    DocumentReference docRef = db.Collection("Directors").Document(Director.document);
+                    DocumentReference docRef = db.Collection("Actors").Document(Actor.document);
                     string addID = docRef.Id;
-                    string upDirector = addID + ".jpg";
-                    string directorava = "";
+                    string upActor = addID + ".jpg";
+                    string Actorava = "";
 
-                    var streamPos1 = File.Open(urlDirector, FileMode.Open);
+                    var streamPos1 = File.Open(urlActor, FileMode.Open);
                     var task = new FirebaseStorage(
                         "filmreview-de9c4.appspot.com",
                         new FirebaseStorageOptions
                         {
                             AuthTokenAsyncFactory = () => Task.FromResult(myProp.Default.token_txt),
                             ThrowOnCancel = true
-                        }).Child("Directors").Child(upDirector).PutAsync(streamPos1);
-                    directorava = await task;
+                        }).Child("Actors").Child(upActor).PutAsync(streamPos1);
+                    Actorava = await task;
                     streamPos1.Close();
 
-                    var InfoDirector = new InfoDirector
+                    var InfoActor = new InfoActor
                     {
                         name = name.Text,
                         age = Convert.ToInt32(age.Text),
-                        avatar = directorava
+                        avatar = Actorava
                     };
-                    await docRef.SetAsync(InfoDirector);
+                    await docRef.SetAsync(InfoActor);
                     MessageBox.Show("Sửa thành công!");
                     this.Close();
                 }
@@ -73,7 +73,7 @@ namespace MovieApp_Admin
                         { "name", name.Text },
                         { "age",Convert.ToInt32( age.Text) }
                     };
-                    DocumentReference docRef = db.Collection("Directors").Document(Director.document);
+                    DocumentReference docRef = db.Collection("Actors").Document(Actor.document);
                     await docRef.UpdateAsync(update);
                     MessageBox.Show("Sửa thành công!");
                     this.Close();
@@ -87,7 +87,7 @@ namespace MovieApp_Admin
             open.Filter = "Image Files(*.png;*.jpg; *.jpeg; *.gif; *.bmp)|*.png;*.jpg; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                urlDirector = open.FileName;
+                urlActor = open.FileName;
                 var stream = File.OpenRead(open.FileName);
                 Bitmap map = new Bitmap(stream);
                 pictureBox1.Image = map;
@@ -97,11 +97,11 @@ namespace MovieApp_Admin
         }
         private async void GetAllData()
         {
-            docref = db.Collection("Directors").Document(Director.document);
+            docref = db.Collection("Actors").Document(Actor.document);
             DocumentSnapshot snap = await docref.GetSnapshotAsync();
             if (snap.Exists)
             {
-                flm = snap.ConvertTo<InfoDirector>();
+                flm = snap.ConvertTo<InfoActor>();
                 
 
                 if (flm.avatar != "")

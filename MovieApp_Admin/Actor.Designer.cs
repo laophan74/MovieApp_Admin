@@ -1,6 +1,6 @@
 ﻿namespace MovieApp_Admin
 {
-    partial class Director
+    partial class Actor
     {
         /// <summary>
         /// Required designer variable.
@@ -89,9 +89,9 @@
             this.label2.Location = new System.Drawing.Point(95, 30);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 21);
+            this.label2.Size = new System.Drawing.Size(56, 21);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Directors";
+            this.label2.Text = "Actors";
             // 
             // label_count
             // 
@@ -341,7 +341,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(18);
             this.panel7.Size = new System.Drawing.Size(744, 70);
-            this.panel7.TabIndex = 3;
+            this.panel7.TabIndex = 2;
             // 
             // panel8
             // 
@@ -364,6 +364,7 @@
             this.button1.Size = new System.Drawing.Size(44, 34);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // searchtxt
             // 
@@ -392,7 +393,7 @@
             this.searchtxt.TabIndex = 4;
             this.searchtxt.TextOffset = new System.Drawing.Point(10, 0);
             // 
-            // Director
+            // Actor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -400,7 +401,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Director";
+            this.Name = "Actor";
             this.Text = "Film";
             this.Load += new System.EventHandler(this.Film_Load);
             this.guna2Panel1.ResumeLayout(false);
@@ -430,6 +431,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2TextBox searchtxt;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
@@ -440,6 +442,5 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button1;
-        private Guna.UI2.WinForms.Guna2TextBox searchtxt;
     }
 }

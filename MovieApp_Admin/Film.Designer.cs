@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Film));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,12 +35,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.poster = new System.Windows.Forms.DataGridViewImageColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -49,11 +52,10 @@
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.poster = new System.Windows.Forms.DataGridViewImageColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.searchtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,11 +64,13 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
+            this.guna2Panel1.Controls.Add(this.panel7);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.CustomBorderColor = System.Drawing.Color.Silver;
@@ -78,33 +82,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1168, 70);
             this.guna2Panel1.TabIndex = 2;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.AutoRoundedCorners = true;
-            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox1.BorderRadius = 19;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
-            this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.guna2TextBox1.Location = new System.Drawing.Point(570, 15);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(6, 4, 4, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Search";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(510, 40);
-            this.guna2TextBox1.TabIndex = 4;
-            this.guna2TextBox1.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // label2
             // 
@@ -220,6 +197,62 @@
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             this.guna2DataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.guna2DataGridView1_RowsAdded);
             // 
+            // poster
+            // 
+            this.poster.FillWeight = 16.04278F;
+            this.poster.HeaderText = "";
+            this.poster.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.poster.MinimumWidth = 6;
+            this.poster.Name = "poster";
+            this.poster.ReadOnly = true;
+            // 
+            // name
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.name.DefaultCellStyle = dataGridViewCellStyle3;
+            this.name.FillWeight = 16.04278F;
+            this.name.HeaderText = "Name";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // category
+            // 
+            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
+            this.category.DefaultCellStyle = dataGridViewCellStyle4;
+            this.category.FillWeight = 435.8289F;
+            this.category.HeaderText = "Category";
+            this.category.MinimumWidth = 6;
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            this.category.Width = 230;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gray;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column4.FillWeight = 16.04278F;
+            this.Column4.HeaderText = "Description";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 400;
+            // 
+            // _id
+            // 
+            this._id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this._id.HeaderText = "id";
+            this._id.MinimumWidth = 6;
+            this._id.Name = "_id";
+            this._id.ReadOnly = true;
+            this._id.Visible = false;
+            this._id.Width = 50;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel6);
@@ -312,61 +345,67 @@
             this.guna2Button4.Text = "Edit";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
-            // poster
+            // panel7
             // 
-            this.poster.FillWeight = 16.04278F;
-            this.poster.HeaderText = "";
-            this.poster.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.poster.MinimumWidth = 6;
-            this.poster.Name = "poster";
-            this.poster.ReadOnly = true;
+            this.panel7.BackColor = System.Drawing.SystemColors.Control;
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.searchtxt);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(424, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(20);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(18);
+            this.panel7.Size = new System.Drawing.Size(744, 70);
+            this.panel7.TabIndex = 3;
             // 
-            // name
+            // panel8
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.name.DefaultCellStyle = dataGridViewCellStyle3;
-            this.name.FillWeight = 16.04278F;
-            this.name.HeaderText = "Name";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
+            this.panel8.Controls.Add(this.button1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(172, 18);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(44, 34);
+            this.panel8.TabIndex = 5;
             // 
-            // category
+            // button1
             // 
-            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
-            this.category.DefaultCellStyle = dataGridViewCellStyle4;
-            this.category.FillWeight = 435.8289F;
-            this.category.HeaderText = "Category";
-            this.category.MinimumWidth = 6;
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            this.category.Width = 230;
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::MovieApp_Admin.Properties.Resources.loupe__1_;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 34);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // Column4
+            // searchtxt
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gray;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column4.FillWeight = 16.04278F;
-            this.Column4.HeaderText = "Description";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 400;
-            // 
-            // _id
-            // 
-            this._id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this._id.HeaderText = "id";
-            this._id.MinimumWidth = 6;
-            this._id.Name = "_id";
-            this._id.ReadOnly = true;
-            this._id.Visible = false;
-            this._id.Width = 50;
+            this.searchtxt.AutoRoundedCorners = true;
+            this.searchtxt.BackColor = System.Drawing.Color.Transparent;
+            this.searchtxt.BorderRadius = 16;
+            this.searchtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchtxt.DefaultText = "";
+            this.searchtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchtxt.Dock = System.Windows.Forms.DockStyle.Right;
+            this.searchtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchtxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchtxt.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.searchtxt.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.searchtxt.Location = new System.Drawing.Point(216, 18);
+            this.searchtxt.Margin = new System.Windows.Forms.Padding(6, 4, 4, 4);
+            this.searchtxt.Name = "searchtxt";
+            this.searchtxt.PasswordChar = '\0';
+            this.searchtxt.PlaceholderText = "Search";
+            this.searchtxt.SelectedText = "";
+            this.searchtxt.Size = new System.Drawing.Size(510, 34);
+            this.searchtxt.TabIndex = 4;
+            this.searchtxt.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // Film
             // 
@@ -388,6 +427,8 @@
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -404,7 +445,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
@@ -413,5 +453,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn category;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn _id;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button button1;
+        private Guna.UI2.WinForms.Guna2TextBox searchtxt;
     }
 }

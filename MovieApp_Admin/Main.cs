@@ -97,5 +97,16 @@ namespace MovieApp_Admin
             this.Panel_Container.Controls.Add(account);
             account.Show();
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Panel_Container.Controls.Clear();
+            Actor account = new Actor();
+            account.TopLevel = false;
+            account.Dock = DockStyle.Fill;
+            this.Panel_Container.Controls.Add(account);
+            account.Show();
+
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace MovieApp_Admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new SignIn());
         }
     }
 }
