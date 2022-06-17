@@ -1,4 +1,7 @@
 ﻿using Google.Cloud.Firestore;
+using System.Drawing;
+using System.IO;
+using System.Net;
 
 namespace MovieApp_Admin
 {
@@ -15,5 +18,22 @@ namespace MovieApp_Admin
         public string name { get; set; }
         [FirestoreProperty]
         public string bio { get; set; }
+
+        private Bitmap bit = null;
+
+        public Bitmap Getbit()
+        {
+            if (bit == null)
+            {
+                using (WebClient web = new WebClient())
+                {
+                    Stream stream = web.OpenRead(imageURL);
+                    bit = new Bitmap(stream);
+                    stream.Flush();
+                    stream.Close();
+                }
+            }
+            return bit;
+        }
     }
 }

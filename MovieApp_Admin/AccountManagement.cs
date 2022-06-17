@@ -40,23 +40,22 @@ namespace MovieApp_Admin
                 Image image = myRes._default;
                 if (docsnap.Exists)
                 {
-                    /*if (d.imageURL != "")
+                    /*Bitmap bit = MovieApp_Admin.Properties.Resources.businessman;
+                    if (d.imageURL != "")
                     {
                         using (WebClient web = new WebClient())
                         {
                             Stream stream = web.OpenRead(d.imageURL);
-                            Bitmap bit = new Bitmap(stream);
-                            if (bit != null) image = bit;
+                            bit = new Bitmap(stream);
                             stream.Flush();
                             stream.Close();
                         }
                     }*/
                     guna2DataGridView1.Rows.Add(
-                        null,
                         d.name,
                         d.isAdmin.ToString(),
-                        d.bio
-                        );
+                        d.email,
+                        docsnap.Id);
                 }
             }
         }
@@ -64,7 +63,55 @@ namespace MovieApp_Admin
         private void guna2DataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             int numrow = guna2DataGridView1.Rows.Count;
-            label1.Text = numrow.ToString();
+            label_count.Text = numrow.ToString();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(guna2DataGridView1.CurrentRow.Cells[3].Value.ToString());
+            if (MessageBox.Show("Bạn có muốn xóa!!!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                DocumentReference docref = db.Collection("Users").Document(guna2DataGridView1.CurrentRow.Cells[3].Value.ToString());
+                docref.DeleteAsync();
+                MessageBox.Show("Đã xóa!");
+            }
+            guna2DataGridView1.Rows.Clear();
+            guna2DataGridView1.Refresh();
+            GetAllDocument("Users");
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            String searchstr = searchtxt.Text;
+            Query searchQ = null;
+
+            if (searchstr != "")
+            {
+                guna2DataGridView1.Rows.Clear();
+                searchQ = db.Collection("Users").WhereGreaterThanOrEqualTo("name", searchstr)
+                        .WhereLessThanOrEqualTo("name", searchstr + "\uf8ff");
+
+                QuerySnapshot searchSS = await searchQ.GetSnapshotAsync();
+                foreach (var item in searchSS)
+                {
+                    DocumentReference docRef = db.Collection("Users").Document(item.Id);
+                    DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+                    InfoUser d = snapshot.ConvertTo<InfoUser>();
+                    if (snapshot.Exists)
+                    {
+                        guna2DataGridView1.Rows.Add(
+                            d.name,
+                            d.isAdmin.ToString(),
+                            d.email,
+                            snapshot.Id);
+                    }
+                }
+            }
+        }
+
+        private void guna2DataGridView1_RowsAdded_1(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            label_count.Text = guna2DataGridView1.Rows.Count.ToString();
         }
     }
 }

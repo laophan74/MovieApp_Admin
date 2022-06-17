@@ -56,7 +56,6 @@ namespace MovieApp_Admin
                     guna2DataGridView1.Rows.Add(
                         image, 
                         d.name, 
-                        d.age.ToString(),
                         docsnap.Id);
                 }
             }
@@ -64,7 +63,7 @@ namespace MovieApp_Admin
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            document = guna2DataGridView1.CurrentRow.Cells[3].Value.ToString();
+            document = guna2DataGridView1.CurrentRow.Cells[2].Value.ToString();
             EditDirector edit = new EditDirector();
             edit.Show();
 
@@ -80,13 +79,13 @@ namespace MovieApp_Admin
         {
             if (MessageBox.Show("Bạn có muốn xóa!!!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                DocumentReference docref = db.Collection("Directors").Document(guna2DataGridView1.CurrentRow.Cells[3].Value.ToString());
+                DocumentReference docref = db.Collection("Directors").Document(guna2DataGridView1.CurrentRow.Cells[2].Value.ToString());
                 docref.DeleteAsync();
                 MessageBox.Show("Đã xóa!");
+                guna2DataGridView1.Rows.Clear();
+                guna2DataGridView1.Refresh();
+                GetAllDocument("Directors");
             }
-            guna2DataGridView1.Rows.Clear();
-            guna2DataGridView1.Refresh();
-            GetAllDocument("Directors");
 
         }
 
@@ -99,6 +98,47 @@ namespace MovieApp_Admin
         {
             label_count.Text = guna2DataGridView1.Rows.Count.ToString();
 
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            
+            String searchstr = searchtxt.Text;
+            Query searchQ = null;
+
+            if (searchstr != "")
+            {
+                guna2DataGridView1.Rows.Clear();
+                searchQ = db.Collection("Directors").WhereGreaterThanOrEqualTo("name", searchstr)
+                        .WhereLessThanOrEqualTo("name", searchstr + "\uf8ff");
+
+                QuerySnapshot searchSS = await searchQ.GetSnapshotAsync();
+                foreach (var item in searchSS)
+                {
+                    DocumentReference docRef = db.Collection("Directors").Document(item.Id);
+                    DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+                    InfoDirector d = snapshot.ConvertTo<InfoDirector>();
+                    Image image = myRes._default;
+                    if (snapshot.Exists)
+                    {
+                        if (d.avatar != "")
+                        {
+                            using (WebClient web = new WebClient())
+                            {
+                                Stream stream = web.OpenRead(d.avatar);
+                                Bitmap bit = new Bitmap(stream);
+                                if (bit != null) image = bit;
+                                stream.Flush();
+                                stream.Close();
+                            }
+                        }
+                        guna2DataGridView1.Rows.Add(
+                            image,
+                            d.name,
+                            snapshot.Id);
+                    }
+                }
+            }
         }
     }
 }

@@ -27,7 +27,6 @@ namespace MovieApp_Admin
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(name.Text) ||
-                string.IsNullOrEmpty(age.Text) ||
                 pictureBox1.Image == null)
             {
                 MessageBox.Show("Vui lòng nhập lại thông tin!");
@@ -38,7 +37,6 @@ namespace MovieApp_Admin
                 var InfoActor = new InfoActor
                 {
                     name = name.Text,
-                    age = Convert.ToInt32(age.Text),
                 };
 
                 DocumentReference docRef = await db.Collection("Actors").AddAsync(InfoActor);

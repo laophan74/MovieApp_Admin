@@ -79,7 +79,7 @@ namespace MovieApp_Admin
                     InfoUser user = ss.ConvertTo<InfoUser>();
                     if (!user.isAdmin) return false;
                     CLient.adminName = user.name;
-
+                    CLient.uid = link.User.LocalId;
                 }
                 isSignOut = false;
 

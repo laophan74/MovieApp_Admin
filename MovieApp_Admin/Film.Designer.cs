@@ -35,6 +35,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.searchtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,11 +56,9 @@
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.searchtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -64,8 +66,6 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -82,6 +82,69 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1168, 70);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Control;
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.searchtxt);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(424, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(20);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(18);
+            this.panel7.Size = new System.Drawing.Size(744, 70);
+            this.panel7.TabIndex = 3;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.button1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(172, 18);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(44, 34);
+            this.panel8.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::MovieApp_Admin.Properties.Resources.loupe__1_;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 34);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // searchtxt
+            // 
+            this.searchtxt.AutoRoundedCorners = true;
+            this.searchtxt.BackColor = System.Drawing.Color.Transparent;
+            this.searchtxt.BorderRadius = 16;
+            this.searchtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchtxt.DefaultText = "";
+            this.searchtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchtxt.Dock = System.Windows.Forms.DockStyle.Right;
+            this.searchtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchtxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchtxt.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.searchtxt.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.searchtxt.Location = new System.Drawing.Point(216, 18);
+            this.searchtxt.Margin = new System.Windows.Forms.Padding(6, 4, 4, 4);
+            this.searchtxt.Name = "searchtxt";
+            this.searchtxt.PasswordChar = '\0';
+            this.searchtxt.PlaceholderText = "Search";
+            this.searchtxt.SelectedText = "";
+            this.searchtxt.Size = new System.Drawing.Size(510, 34);
+            this.searchtxt.TabIndex = 4;
+            this.searchtxt.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // label2
             // 
@@ -345,68 +408,6 @@
             this.guna2Button4.Text = "Edit";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.Control;
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.searchtxt);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(424, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(20);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(18);
-            this.panel7.Size = new System.Drawing.Size(744, 70);
-            this.panel7.TabIndex = 3;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.button1);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(172, 18);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(44, 34);
-            this.panel8.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = global::MovieApp_Admin.Properties.Resources.loupe__1_;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 34);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // searchtxt
-            // 
-            this.searchtxt.AutoRoundedCorners = true;
-            this.searchtxt.BackColor = System.Drawing.Color.Transparent;
-            this.searchtxt.BorderRadius = 16;
-            this.searchtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchtxt.DefaultText = "";
-            this.searchtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.searchtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.searchtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchtxt.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchtxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchtxt.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.searchtxt.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.searchtxt.Location = new System.Drawing.Point(216, 18);
-            this.searchtxt.Margin = new System.Windows.Forms.Padding(6, 4, 4, 4);
-            this.searchtxt.Name = "searchtxt";
-            this.searchtxt.PasswordChar = '\0';
-            this.searchtxt.PlaceholderText = "Search";
-            this.searchtxt.SelectedText = "";
-            this.searchtxt.Size = new System.Drawing.Size(510, 34);
-            this.searchtxt.TabIndex = 4;
-            this.searchtxt.TextOffset = new System.Drawing.Point(10, 0);
-            // 
             // Film
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -420,6 +421,8 @@
             this.Load += new System.EventHandler(this.Film_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
@@ -427,8 +430,6 @@
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

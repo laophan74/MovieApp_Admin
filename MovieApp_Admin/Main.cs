@@ -46,15 +46,11 @@ namespace MovieApp_Admin
 
         private async void Main_Load(object sender, EventArgs e)
         {
-            Query U = db.Collection("Users");
-            QuerySnapshot snap = await U.GetSnapshotAsync();
-
-
-            foreach (DocumentSnapshot docsnap in snap.Documents)
-            {
-                InfoUser user = docsnap.ConvertTo<InfoUser>();
+            DocumentReference U = db.Collection("Users").Document(CLient.uid);
+            DocumentSnapshot snap = await U.GetSnapshotAsync();
+                InfoUser user = snap.ConvertTo<InfoUser>();
                 Image image = myRes._default;
-                if (docsnap.Exists)
+                if (snap.Exists)
                 {
                     /*if (user.avatar != "")
                     {
@@ -69,7 +65,7 @@ namespace MovieApp_Admin
                     }*/
                     label_username.Text = user.name;
                 }
-            }
+            
         }
 
         private void avatarptb_Click(object sender, EventArgs e)

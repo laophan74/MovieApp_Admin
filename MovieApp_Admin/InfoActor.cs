@@ -11,7 +11,6 @@ namespace MovieApp_Admin
         public string avatar { get; set; }
         [FirestoreProperty]
         public string name { get; set; }
-        [FirestoreProperty]
-        public int age { get; set; }
+
     }
 }

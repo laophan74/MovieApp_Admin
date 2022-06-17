@@ -121,6 +121,7 @@ namespace MovieApp_Admin
                 string upPos = addID + ".jpg";
                 string upTra = addID + ".mp4";
                 string poster = "", trailer = "";
+                list.Clear();
                 foreach (var item in lbCategory.SelectedItems)
                 {
                     list.Add(item.ToString());
@@ -347,6 +348,18 @@ namespace MovieApp_Admin
                 }
                 label_category.Text = category;
                 list = flm.category;
+
+                //setCategoryListbox
+                for (int i = 0; i< list.Count; i++)
+                {
+                    for(int j = 0; j < lbCategory.Items.Count; j++)
+                    {
+                        if (list[i].ToString() == lbCategory.Items[j].ToString())
+                        {
+                            lbCategory.SetSelected(j, true);
+                        }
+                    }
+                }
 
                 //actor to string
                 if (flm.actor != null)

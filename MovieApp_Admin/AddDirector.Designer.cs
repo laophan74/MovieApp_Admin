@@ -41,9 +41,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel23 = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.age = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -52,7 +49,6 @@
             this.panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel23.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel15
@@ -80,7 +76,6 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel16.Controls.Add(this.panel1);
             this.panel16.Controls.Add(this.panel21);
             this.panel16.Controls.Add(this.panel17);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
@@ -216,47 +211,6 @@
             this.guna2Button3.Text = "ADD";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.age);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(445, 74);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(496, 45);
-            this.panel1.TabIndex = 11;
-            // 
-            // age
-            // 
-            this.age.BorderRadius = 15;
-            this.age.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.age.DefaultText = "";
-            this.age.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.age.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.age.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.age.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.age.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.age.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.age.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.age.Location = new System.Drawing.Point(124, 6);
-            this.age.Name = "age";
-            this.age.PasswordChar = '\0';
-            this.age.PlaceholderText = "";
-            this.age.SelectedText = "";
-            this.age.Size = new System.Drawing.Size(262, 36);
-            this.age.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 45);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Age: ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // AddDirector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -277,7 +231,6 @@
             this.panel19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel23.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,8 +250,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel23;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2TextBox age;
-        private System.Windows.Forms.Label label1;
     }
 }

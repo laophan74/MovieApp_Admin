@@ -30,7 +30,6 @@ namespace MovieApp_Admin
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(name.Text) ||
-                string.IsNullOrEmpty(age.Text) ||
                 pictureBox1.Image == null)
             {
                 MessageBox.Show("Vui lòng nhập lại thông tin!");
@@ -59,7 +58,6 @@ namespace MovieApp_Admin
                     var InfoDirector = new InfoDirector
                     {
                         name = name.Text,
-                        age = Convert.ToInt32(age.Text),
                         avatar = directorava
                     };
                     await docRef.SetAsync(InfoDirector);
@@ -71,7 +69,6 @@ namespace MovieApp_Admin
                     Dictionary<string, object> update = new Dictionary<string, object>
                     {
                         { "name", name.Text },
-                        { "age",Convert.ToInt32( age.Text) }
                     };
                     DocumentReference docRef = db.Collection("Directors").Document(Director.document);
                     await docRef.UpdateAsync(update);
@@ -116,7 +113,6 @@ namespace MovieApp_Admin
                     }
                 }
                 name.Text = flm.name;
-                age.Text = flm.age.ToString();
             }
         }
 

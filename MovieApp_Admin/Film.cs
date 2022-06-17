@@ -121,5 +121,68 @@ namespace MovieApp_Admin
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            String searchstr = searchtxt.Text;
+            Query searchQ = null;
+
+            if (searchstr != "")
+            {
+                guna2DataGridView1.Rows.Clear();
+                searchQ = db.Collection("Films").WhereGreaterThanOrEqualTo("name", searchstr)
+                        .WhereLessThanOrEqualTo("name", searchstr + "\uf8ff");
+
+                QuerySnapshot searchSS = await searchQ.GetSnapshotAsync();
+                foreach (var item1 in searchSS)
+                {
+                    DocumentReference docRef = db.Collection("Films").Document(item1.Id);
+                    DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+                    InfoFilm film = snapshot.ConvertTo<InfoFilm>();
+                    Image image = myRes._default;
+                    if (snapshot.Exists)
+                    {
+                        //category to string
+                        List<string> cate = new List<string>();
+                        string category = "";
+                        foreach (var item in film.category)
+                        {
+                            cate.Add(item.ToString());
+                        }
+                        if (cate.Count > 1)
+                        {
+                            for (int i = 0; i < (cate.Count - 1); i++)
+                            {
+                                category += cate[i] + ", ";
+                            }
+                            category += cate[cate.Count - 1];
+                        }
+                        else
+                        {
+                            category += cate[0];
+                        }
+
+
+                        if (film.poster != "")
+                        {
+                            using (WebClient web = new WebClient())
+                            {
+                                Stream stream = web.OpenRead(film.poster);
+                                Bitmap bit = new Bitmap(stream);
+                                if (bit != null) image = bit;
+                                stream.Flush();
+                                stream.Close();
+                            }
+                        }
+                        guna2DataGridView1.Rows.Add(
+                            image,
+                            film.name,
+                            category,
+                            film.descript,
+                            snapshot.Id);
+                    }
+                }
+            }
+        }
     }
 }

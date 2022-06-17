@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Cloud.Firestore;
@@ -41,6 +44,22 @@ namespace MovieApp_Admin
 
         [FirestoreProperty]
         public string country { get; set; }
+        private Bitmap bit = null;
+
+        public Bitmap Getbit()
+        {
+            if (bit == null)
+            {
+                using (WebClient web = new WebClient())
+                {
+                    Stream stream = web.OpenRead(poster);
+                    bit = new Bitmap(stream);
+                    stream.Flush();
+                    stream.Close();
+                }
+            }
+            return bit;
+        }
 
         public InfoFilm(string name, string descript, string poster, 
             int totalPoint, int numRate, List<string> category, int year, 
